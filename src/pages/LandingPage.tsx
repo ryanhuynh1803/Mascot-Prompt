@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -6,6 +6,16 @@ import { LandingPagePresetCarousel } from '@/components/LandingPagePresetCarouse
 
 const LandingPage = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Add the custom cursor class to the body when the component mounts
+    document.body.classList.add('custom-cursor-landing');
+
+    // Remove the custom cursor class from the body when the component unmounts
+    return () => {
+      document.body.classList.remove('custom-cursor-landing');
+    };
+  }, []); // Empty dependency array ensures this runs once on mount and cleanup on unmount
 
   const handleStart = () => {
     navigate('/generator');
@@ -34,7 +44,6 @@ const LandingPage = () => {
         </Button>
       </div>
 
-      {/* Removed max-w-5xl to allow full width for the carousel */}
       <div className="mt-12 w-full"> 
         <LandingPagePresetCarousel />
       </div>
