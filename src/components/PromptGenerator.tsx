@@ -6,6 +6,7 @@ import { SelectedOptions } from "./SelectedOptions";
 import { useMascotConfig } from "@/hooks/useMascotConfig";
 import { Badge } from "@/components/ui/badge";
 import { PromptOptions } from "@/types/mascot";
+import { PresetSelector } from "./PresetSelector"; // New import
 
 export function PromptGenerator() {
   const [visitorCount, setVisitorCount] = useState("");
@@ -68,6 +69,8 @@ export function PromptGenerator() {
               currentPage={currentPage}
               totalPages={totalPages}
             />
+            {/* Add PresetSelector here */}
+            <PresetSelector onApplyPreset={handleApplyPreset} />
           </section>
 
           {/* Center Panel - Mascot Preview */}
