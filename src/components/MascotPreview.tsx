@@ -181,7 +181,7 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect, mascotI
                 <TabsTrigger 
                   key={part} 
                   value={part} 
-                  className="px-3 py-2 transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground rounded-sm"
+                  className="px-3 py-2 transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground rounded-lg"
                 >
                   {label}
                 </TabsTrigger>
