@@ -1,15 +1,18 @@
 import React, { useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { ScrollArea } from "@/components/ui/scroll-area"; // Removed ScrollBar import
 import { presets } from "@/data/presets";
 
 export const LandingPagePresetCarousel = () => {
   const navigate = useNavigate();
-  const scrollAreaRef = useRef<HTMLDivElement>(null); // Ref for the ScrollArea
+  const scrollAreaRef = useRef<HTMLDivElement>(null);
 
   const handleSelectPreset = (presetId: string) => {
     navigate(`/generator?presetId=${presetId}`);
   };
+
+  // Duplicate presets for seamless looping
+  const loopedPresets = [...presets, ...presets]; // Duplicate once
 
   useEffect(() => {
     const scrollViewport = scrollAreaRef.current?.querySelector<HTMLDivElement>('[data-radix-scroll-area-viewport]');
@@ -18,30 +21,38 @@ export const LandingPagePresetCarousel = () => {
     const scrollSpeed = 1; // pixels per interval
     const intervalTime = 20; // ms
 
+    // Calculate the width of a single item including its right margin/gap
+    // w-[250px] + gap-4 (16px) = 266px
+    const itemWidthWithGap = 250 + 16; 
+    // The total width of the *original* set of items
+    const originalContentTotalWidth = presets.length * itemWidthWithGap;
+
     const scrollInterval = setInterval(() => {
-      // Check if we've reached the end of the scrollable content
-      if (scrollViewport.scrollLeft + scrollViewport.clientWidth >= scrollViewport.scrollWidth) {
-        // If at the end, instantly reset to the beginning
-        scrollViewport.scrollTo({ left: 0, behavior: 'auto' }); 
-      } else {
-        // Otherwise, scroll by a small amount smoothly
-        scrollViewport.scrollBy({ left: scrollSpeed, behavior: 'smooth' });
+      if (!scrollViewport) return;
+
+      // If we've scrolled past the end of the first set of items,
+      // instantly jump back to the beginning of the second set.
+      // We check if current scroll position is greater than or equal to the width of the original content.
+      if (scrollViewport.scrollLeft >= originalContentTotalWidth) {
+        scrollViewport.scrollLeft -= originalContentTotalWidth; // Jump back by one full set
       }
+
+      // Continue scrolling smoothly
+      scrollViewport.scrollBy({ left: scrollSpeed, behavior: 'smooth' });
     }, intervalTime);
 
-    // Cleanup function to clear the interval when the component unmounts
+    // Cleanup function
     return () => clearInterval(scrollInterval);
   }, []); // Empty dependency array means this effect runs once on mount and cleans up on unmount
 
   return (
     <div className="w-full">
-      {/* Changed px-6 to px-0 to allow full width, py-4 for vertical padding */}
-      <div className="px-0 py-4"> 
-        <ScrollArea className="w-full whitespace-nowrap pb-4" ref={scrollAreaRef}>
+      <div className="px-0 py-4">
+        <ScrollArea className="w-full whitespace-nowrap pb-0" ref={scrollAreaRef}> {/* Changed pb-4 to pb-0 */}
           <div className="flex gap-4 py-2">
-            {presets.map((preset) => (
+            {loopedPresets.map((preset, index) => ( // Use loopedPresets and unique key
               <div 
-                key={preset.id} 
+                key={`${preset.id}-${index}`} 
                 onClick={() => handleSelectPreset(preset.id)} 
                 className="flex-none w-[250px] rounded-lg overflow-hidden cursor-pointer"
               >
@@ -53,7 +64,7 @@ export const LandingPagePresetCarousel = () => {
               </div>
             ))}
           </div>
-          <ScrollBar orientation="horizontal" />
+          {/* Removed ScrollBar component */}
         </ScrollArea>
       </div>
     </div>
