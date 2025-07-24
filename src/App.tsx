@@ -6,7 +6,7 @@ import LandingPage from "./pages/LandingPage";
 import GeneratorPage from "./pages/GeneratorPage";
 import NotFound from "./pages/NotFound";
 import { useDevToolsProtection } from "./hooks/useDevToolsProtection";
-import { ThemeProvider } from "./components/ThemeProvider"; // Import ThemeProvider
+// import { ThemeProvider } from "./components/ThemeProvider"; // Import ThemeProvider
 
 const queryClient = new QueryClient();
 
@@ -15,7 +15,7 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme"> {/* Wrap with ThemeProvider */}
+      {/* <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme"> */}
         <TooltipProvider>
           <Toaster />
           <BrowserRouter>
@@ -26,7 +26,7 @@ const App = () => {
             </Routes>
           </BrowserRouter>
         </TooltipProvider>
-      </ThemeProvider>
+      {/* </ThemeProvider> */}
     </QueryClientProvider>
   );
 };

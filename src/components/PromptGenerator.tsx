@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { PromptOptions } from "@/types/mascot";
 import { PresetSelector } from "./PresetSelector";
 import { Preset } from "@/data/presets";
-import { ThemeToggle } from "./ThemeToggle"; // Import ThemeToggle
+// import { ThemeToggle } from "./ThemeToggle"; // Import ThemeToggle
 
 export function PromptGenerator() {
   const [visitorCount, setVisitorCount] = useState("");
@@ -44,7 +44,7 @@ export function PromptGenerator() {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <header className="flex justify-end mb-4">
-          <ThemeToggle /> {/* Add ThemeToggle here */}
+          {/* <ThemeToggle /> */}
         </header>
 
         {/* Main Content Grid */}
