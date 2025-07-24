@@ -176,7 +176,7 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect, mascotI
           className="w-full max-w-[300px]"
         >
           <ScrollArea className="w-full whitespace-nowrap" ref={scrollAreaRef}>
-            <TabsList className="w-max bg-muted p-1 rounded-md" ref={tabsListRef}>
+            <TabsList className="w-max bg-muted p-1 rounded-lg border border-border" ref={tabsListRef}>
               {bodyParts.map(({ part, label }) => (
                 <TabsTrigger 
                   key={part} 
