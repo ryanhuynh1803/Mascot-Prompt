@@ -1,7 +1,7 @@
 import { PromptGenerator } from "@/components/PromptGenerator";
 
-const Index = () => {
+const GeneratorPage = () => {
   return <PromptGenerator />;
 };
 
-export default Index;
+export default GeneratorPage;
