@@ -1,92 +1,88 @@
 import { PromptOptions } from "@/types/mascot";
 
 export const buildPrompt = (options: Partial<PromptOptions>): string => {
-  let promptParts: string[] = [];
+  const parts: string[] = [];
   const get = (key: keyof PromptOptions) => options[key]?.trim();
 
-  // 1. Character Core
-  const characterDescription = [];
-  if (get('art_style')) characterDescription.push(`${get('art_style')} style`);
-  if (get('age_gender_personality')) characterDescription.push(`${get('age_gender_personality')} character`);
-  if (get('design_theme')) characterDescription.push(`in a ${get('design_theme')} theme`);
+  // Start with the main command
+  parts.push("Generate a 3D mascot");
 
-  if (characterDescription.length > 0) {
-    promptParts.push(`A 3D mascot, rendered in a ${characterDescription.join(', ')}.`);
-  } else {
-    promptParts.push(`A 3D mascot.`);
+  // Character Core
+  const characterDetails = [];
+  if (get('art_style')) characterDetails.push(`${get('art_style')} style`);
+  if (get('age_gender_personality')) characterDetails.push(`a ${get('age_gender_personality')} character`);
+  if (get('design_theme')) characterDetails.push(`in a ${get('design_theme')} theme`);
+  if (characterDetails.length > 0) {
+    parts.push(`rendered in a ${characterDetails.join(', ')}`);
   }
 
-  // 2. Body and Pose
+  // Body and Pose
   const bodyAndPoseDetails = [];
   if (get('body_shape')) bodyAndPoseDetails.push(`a ${get('body_shape')} body shape`);
   if (get('proportion_details')) bodyAndPoseDetails.push(`${get('proportion_details')} proportions`);
   if (get('pose_and_attitude')) bodyAndPoseDetails.push(`a ${get('pose_and_attitude')} pose`);
-
   if (bodyAndPoseDetails.length > 0) {
-    promptParts.push(`It features ${bodyAndPoseDetails.join(' and ')}.`);
+    parts.push(`featuring ${bodyAndPoseDetails.join(' and ')}`);
   }
 
-  // 3. Costume
+  // Costume
   const costumeDetails = [];
   if (get('costume_type')) costumeDetails.push(`${get('costume_type')} costume`);
   if (get('costume_description')) costumeDetails.push(`${get('costume_description')}`);
   if (get('accessory_detail')) costumeDetails.push(`with ${get('accessory_detail')}`);
   if (get('animal_or_theme_inspiration')) costumeDetails.push(`inspired by ${get('animal_or_theme_inspiration')}`);
-
   if (costumeDetails.length > 0) {
-    promptParts.push(`The mascot is adorned in a ${costumeDetails.join(', ')}.`);
+    parts.push(`wearing a ${costumeDetails.join(', ')}`);
   }
 
-  // 4. Legs and Footwear
+  // Legs and Footwear
   const legDetails = [];
   if (get('leg_shape')) legDetails.push(`${get('leg_shape')} legs`);
   if (get('footwear')) legDetails.push(`${get('footwear')}`);
-
   if (legDetails.length > 0) {
-    promptParts.push(`Its lower body has ${legDetails.join(' and ')}.`);
+    parts.push(`with ${legDetails.join(' and ')}`);
   }
 
-  // 5. Face
+  // Face
   const faceDetails = [];
   if (get('hair_style')) faceDetails.push(`${get('hair_style')} hair`);
   if (get('face_features')) faceDetails.push(`${get('face_features')}`);
   if (get('emotion_or_attitude')) faceDetails.push(`an ${get('emotion_or_attitude')} expression`);
-
   if (faceDetails.length > 0) {
-    promptParts.push(`The face showcases ${faceDetails.join(', ')}.`);
+    parts.push(`showcasing ${faceDetails.join(', ')}`);
   }
 
-  // 6. Materials
+  // Materials
   const materials = [get('material_1'), get('material_2'), get('material_3')].filter(Boolean);
-  let materialSentence = '';
+  let materialPhrase = '';
   if (materials.length > 0) {
-    materialSentence += `It is primarily composed of ${materials.join(', ')}`;
+    materialPhrase += `composed of ${materials.join(', ')}`;
   }
   if (get('surface_feel')) {
-    if (materialSentence) {
-      materialSentence += ` and offers a ${get('surface_feel')} tactile experience.`;
+    if (materialPhrase) {
+      materialPhrase += ` and offering a ${get('surface_feel')} tactile experience`;
     } else {
-      materialSentence += `It offers a ${get('surface_feel')} tactile experience.`;
+      materialPhrase += `offering a ${get('surface_feel')} tactile experience`;
     }
   }
-  if (materialSentence) {
-    promptParts.push(materialSentence);
+  if (materialPhrase) {
+    parts.push(materialPhrase);
   }
 
-  // 7. Environment
+  // Environment
   const environmentDetails = [];
-  if (get('lighting_style')) environmentDetails.push(`${get('lighting_style')} lighting`);
   if (get('background_type')) environmentDetails.push(`${get('background_type')} background`);
-
+  if (get('lighting_style')) environmentDetails.push(`illuminated by ${get('lighting_style')} lighting`);
   if (environmentDetails.length > 0) {
-    promptParts.push(`The scene is illuminated by ${environmentDetails.join(' against a ')}.`);
+    parts.push(`set against a ${environmentDetails.join(' and ')}`);
   }
 
-  // 8. Context
+  // Context
   if (get('application_context')) {
-    promptParts.push(`This mascot is suitable for ${get('application_context')}.`);
+    parts.push(`ideal for ${get('application_context')}`);
   }
 
-  // Join all parts into a single paragraph
-  return promptParts.join(' ').trim();
+  // Join all parts with commas, and add a period at the end.
+  // This will create a single, long, descriptive sentence.
+  return parts.filter(Boolean).join(', ') + '.';
 };
