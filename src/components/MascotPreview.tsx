@@ -46,13 +46,15 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect }: Masco
     });
   }, [selectedBodyPart]);
 
-  const getButtonClasses = useCallback((part: BodyPart) => {
-    const baseClasses = "absolute transition-all duration-300 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 backdrop-blur-sm";
-    const activeClasses = "bg-primary/40 border-primary shadow-lg ring-2 ring-primary/30";
-    const inactiveClasses = "bg-background/60 hover:bg-primary/20 border-muted-foreground/30 hover:border-primary/70";
+  // The getButtonClasses function was not directly used for the interactive buttons,
+  // so I will directly modify the classNames in the JSX below.
+  // const getButtonClasses = useCallback((part: BodyPart) => {
+  //   const baseClasses = "absolute transition-all duration-300 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 backdrop-blur-sm";
+  //   const activeClasses = "bg-primary/40 border-primary shadow-lg ring-2 ring-primary/30";
+  //   const inactiveClasses = "bg-background/60 hover:bg-primary/20 border-muted-foreground/30 hover:border-primary/70";
     
-    return `${baseClasses} ${selectedBodyPart === part ? activeClasses : inactiveClasses}`;
-  }, [selectedBodyPart]);
+  //   return `${baseClasses} ${selectedBodyPart === part ? activeClasses : inactiveClasses}`;
+  // }, [selectedBodyPart]);
 
   return (
     <Card className="shadow-lg border-2 bg-card/50 backdrop-blur-sm hover:border-primary/20 transition-colors">
@@ -90,8 +92,8 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect }: Masco
                   absolute top-[5%] left-1/2 transform -translate-x-1/2 w-[55%] h-[40%] rounded-full
                   transition-all duration-300 border-2 focus:outline-none focus:ring-2 focus:ring-foreground/50 backdrop-blur-sm
                   ${selectedBodyPart === 'head' 
-                    ? 'bg-foreground/10 border-foreground shadow-lg ring-2 ring-foreground/30' 
-                    : 'bg-background/60 hover:bg-foreground/5 border-muted-foreground/30 hover:border-foreground/20'
+                    ? 'border-foreground shadow-lg ring-2 ring-foreground/30' // Active: only border, no background
+                    : 'bg-transparent hover:bg-transparent border-transparent hover:border-foreground/20' // Inactive: transparent, border on hover
                   }
                 `}
                 title="Click để chỉnh sửa phần đầu"
@@ -113,8 +115,8 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect }: Masco
                   absolute top-[45%] left-1/2 transform -translate-x-1/2 w-[70%] h-[35%]
                   transition-all duration-300 border-2 focus:outline-none focus:ring-2 focus:ring-foreground/50 backdrop-blur-sm
                   ${selectedBodyPart === 'body' 
-                    ? 'bg-foreground/10 border-foreground shadow-lg ring-2 ring-foreground/30' 
-                    : 'bg-background/60 hover:bg-foreground/5 border-muted-foreground/30 hover:border-foreground/20'
+                    ? 'border-foreground shadow-lg ring-2 ring-foreground/30' // Active: only border, no background
+                    : 'bg-transparent hover:bg-transparent border-transparent hover:border-foreground/20' // Inactive: transparent, border on hover
                   }
                 `}
                 title="Click để chỉnh sửa phần thân"
@@ -136,8 +138,8 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect }: Masco
                   absolute bottom-[5%] left-1/2 transform -translate-x-1/2 w-[50%] h-[15%]
                   transition-all duration-300 border-2 focus:outline-none focus:ring-2 focus:ring-foreground/50 backdrop-blur-sm
                   ${selectedBodyPart === 'legs' 
-                    ? 'bg-foreground/10 border-foreground shadow-lg ring-2 ring-foreground/30' 
-                    : 'bg-background/60 hover:bg-foreground/5 border-muted-foreground/30 hover:border-foreground/20'
+                    ? 'border-foreground shadow-lg ring-2 ring-foreground/30' // Active: only border, no background
+                    : 'bg-transparent hover:bg-transparent border-transparent hover:border-foreground/20' // Inactive: transparent, border on hover
                   }
                 `}
                 title="Click để chỉnh sửa phần chân"
@@ -162,7 +164,7 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect }: Masco
           className="w-full max-w-[300px]"
         >
           <ScrollArea className="w-full whitespace-nowrap" ref={scrollAreaRef}>
-            <TabsList className="w-max bg-muted/50 p-1">
+            <TabsList className="w-max bg-muted/50 p-1" ref={tabsListRef}>
               {bodyParts.map(({ part, label }) => (
                 <TabsTrigger 
                   key={part} 
