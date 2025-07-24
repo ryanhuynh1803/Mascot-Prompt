@@ -40,7 +40,7 @@ export const PromptPreview = memo(({ options }: PromptPreviewProps) => {
   }, [generatedPrompt, toast]);
 
   return (
-    <Card className="shadow-lg border-2 bg-card/50 backdrop-blur-sm hover:border-primary/20 transition-colors">
+    <Card className="border-2 bg-card hover:border-primary transition-colors">
       <Collapsible open={isOpen} onOpenChange={setIsOpen}>
         <CardHeader>
           <div className="flex items-center justify-between">
@@ -78,7 +78,7 @@ export const PromptPreview = memo(({ options }: PromptPreviewProps) => {
             </Button>
           </CollapsibleTrigger>
           <CollapsibleContent className="mt-4">
-            <ScrollArea className="h-[250px] bg-muted/30 p-4 rounded-lg border-2 border-dashed border-muted-foreground/20">
+            <ScrollArea className="h-[250px] bg-muted p-4 rounded-lg border-2 border-dashed border-muted-foreground/20">
               <pre className="whitespace-pre-wrap text-sm text-foreground font-mono leading-relaxed">
                 {generatedPrompt}
               </pre>

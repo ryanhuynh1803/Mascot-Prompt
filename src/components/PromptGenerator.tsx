@@ -3,7 +3,7 @@ import { MascotPreview } from "./MascotPreview";
 import OptionsPanel from "./OptionsPanel";
 import { PromptPreview } from "./PromptPreview";
 import { SelectedOptions } from "./SelectedOptions";
-import { useMascotConfig } from "@/hooks/useMascotConfig";
+import { useMascotConfig } from "@/hooks/useMascotConfig"; // Fixed: Added 'from' keyword
 import { Badge } from "@/components/ui/badge";
 import { PromptOptions } from "@/types/mascot";
 
@@ -38,8 +38,8 @@ export function PromptGenerator() {
   return (
     <div className="min-h-screen bg-background text-foreground p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
-        {/* Header Section - REMOVED from here, now on LandingPage */}
-        {/* <header className="text-center mb-8 animate-fade-in">
+        {/* Header Section */}
+        <header className="text-center mb-8 animate-fade-in">
           <div className="flex items-center justify-center gap-3 mb-4">
             <h1 className="text-3xl md:text-4xl font-bold text-foreground">
               Trình Tạo Prompt Mascot
@@ -51,7 +51,7 @@ export function PromptGenerator() {
           <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
             Tạo prompt chi tiết cho mascot của bạn với giao diện trực quan và dễ sử dụng
           </p>
-        </header> */}
+        </header>
 
         {/* Main Content Grid */}
         <main className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
@@ -84,7 +84,7 @@ export function PromptGenerator() {
             <PromptPreview options={options} />
             
             {/* Enhanced Footer */}
-            <footer className="bg-card/50 backdrop-blur-sm rounded-lg p-4 border">
+            <footer className="bg-card rounded-lg p-4 border">
               <div className="text-center text-xs text-muted-foreground space-y-2">
                 <div className="flex items-center justify-center gap-2">
                   <Badge variant="outline" className="text-xs">

@@ -27,7 +27,7 @@ const LandingPage = () => {
         <Button 
           onClick={handleStart} 
           size="lg" 
-          className="mt-8 px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+          className="mt-8 px-8 py-3 text-lg font-semibold transition-all duration-300"
         >
           Bắt đầu
         </Button>
