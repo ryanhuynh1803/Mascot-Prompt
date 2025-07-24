@@ -40,6 +40,6 @@
 
   /* Custom cursor for landing page only */
   body.custom-cursor-landing {
-    cursor: url('/custom-cursor.png'), auto;
+    cursor: url('/custom-cursor.png') auto !important; /* Added !important */
   }
 }
