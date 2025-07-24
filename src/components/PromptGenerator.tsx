@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { MascotPreview } from "./MascotPreview";
 import OptionsPanel from "./OptionsPanel";
 import { PromptPreview } from "./PromptPreview";
-import { SelectedOptions } from "./SelectedOptions"; // Fixed: Changed '=>' to 'from'
+import { SelectedOptions } from "./SelectedOptions";
 import { useMascotConfig } from "@/hooks/useMascotConfig";
 import { Badge } from "@/components/ui/badge";
 import { PromptOptions } from "@/types/mascot";
@@ -94,17 +94,7 @@ export function PromptGenerator() {
                     <span>•</span>
                     <span>Cập nhật: {today}</span>
                   </div>
-                  <p>
-                    Tạo bởi{" "}
-                    <a 
-                      href="https://www.facebook.com/tu.huynh1803/" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="text-primary hover:underline font-semibold inline-flex items-center gap-1"
-                    >
-                      Ryanocode
-                    </a>
-                  </p>
+                  {/* Removed the "Tạo bởi Ryanocode" paragraph */}
                   <div className="flex items-center justify-center gap-4 text-xs">
                     <span>Người truy cập: {visitorCount}</span>
                     <span>•</span>
