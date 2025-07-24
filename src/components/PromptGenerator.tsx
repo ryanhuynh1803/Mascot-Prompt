@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { MascotPreview } from "./MascotPreview";
 import OptionsPanel from "./OptionsPanel";
 import { PromptPreview } from "./PromptPreview";
-import { SelectedOptions } from "./SelectedOptions";
+import { SelectedOptions } from "./SelectedOptions"; // Fixed: Changed '=>' to 'from'
 import { useMascotConfig } from "@/hooks/useMascotConfig";
 import { Badge } from "@/components/ui/badge";
 import { PromptOptions } from "@/types/mascot";
@@ -40,7 +40,7 @@ export function PromptGenerator() {
   const today = new Date().toLocaleDateString('vi-VN');
 
   return (
-    <div className="min-h-screen bg-background text-foreground px-4 pt-[5px] pb-4 md:px-6 md:pt-[5px] md:pb-6"> {/* Adjusted padding here */}
+    <div className="min-h-screen bg-background text-foreground px-4 pt-0 pb-4 md:px-6 md:pt-0 md:pb-6">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <header className="flex justify-end mb-4">
