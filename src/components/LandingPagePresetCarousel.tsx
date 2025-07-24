@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button"; // Removed Button import
 import { presets } from "@/data/presets";
 
 export const LandingPagePresetCarousel = () => {
@@ -26,21 +26,17 @@ export const LandingPagePresetCarousel = () => {
         <ScrollArea className="w-full whitespace-nowrap pb-4">
           <div className="flex gap-4 py-2">
             {presets.map((preset) => (
-              <div key={preset.id} className="flex-none w-[250px] rounded-lg overflow-hidden border bg-background shadow-md hover:shadow-lg transition-all duration-200">
+              <div 
+                key={preset.id} 
+                onClick={() => handleSelectPreset(preset.id)} // Make the div clickable
+                className="flex-none w-[250px] rounded-lg overflow-hidden border bg-background shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer" // Added cursor-pointer
+              >
                 <img 
                   src={preset.imageUrl || "/public/placeholder.svg"}
                   alt={preset.name} 
                   className="w-full h-32 object-cover"
                 />
-                <div className="p-4 space-y-2">
-                  <h3 className="font-semibold text-lg truncate">{preset.name}</h3>
-                  <Button 
-                    onClick={() => handleSelectPreset(preset.id)}
-                    className="w-full rounded-md"
-                  >
-                    Bắt đầu với mẫu này
-                  </Button>
-                </div>
+                {/* Removed the div with h3 and Button */}
               </div>
             ))}
           </div>
