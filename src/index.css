@@ -36,8 +36,8 @@
 
   body {
     @apply bg-background text-foreground;
-    /* Đặt con trỏ tùy chỉnh bằng CSS */
-    cursor: url('/images/cursor-glow.png') 6 6, auto; /* 6 6 là tọa độ điểm nóng (hotspot) của con trỏ */
+    /* Đặt con trỏ tùy chỉnh bằng CSS, và không có con trỏ dự phòng mặc định */
+    cursor: url('/images/cursor-arrow.png') 6 6, none; /* 6 6 là tọa độ điểm nóng (hotspot) của con trỏ */
   }
 
   /* Đã xóa quy tắc custom-cursor-landing */
