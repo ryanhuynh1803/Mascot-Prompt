@@ -40,7 +40,8 @@ export const translations = {
     "stoic, determined, robotic": "điềm tĩnh, quyết đoán, robot",
     "goofy, optimistic, animal-like": "ngốc nghếch, lạc quan, giống động vật", "sassy, confident, alien": "tự tin, ngổ ngáo, người ngoài hành tinh", 
     "adventurous, brave, explorer": "thích phiêu lưu, dũng cảm, nhà thám hiểm",
-    "gentle, loyal, plant-based": "dịu dàng, trung thành, thực vật", "sarcastic, witty, object-like": "châm biếm, hóm hỉnh, giống đồ vật"
+    "gentle, loyal, plant-based": "dịu dàng, trung thành, thực vật", "sarcastic, witty, object-like": "châm biếm, hóm hỉnh, giống đồ vật",
+    "young, moody boy": "cậu bé trẻ, ủ rũ" // New translation
   },
   costume_type: {
     "simple jumpsuit": "bộ áo liền quần đơn giản", "futuristic armor": "áo giáp tương lai", "casual streetwear": "trang phục đường phố", 
@@ -61,11 +62,12 @@ export const translations = {
     "round and soft": "tròn và mềm mại", "tall and slender": "cao và mảnh khảnh", "short and stout": "ngắn và mập mạp", 
     "athletic and muscular": "thể thao và cơ bắp", "boxy and geometric": "hình hộp và hình học", "fluid and amorphous": "lỏng và vô định hình", 
     "triangular and sharp": "tam giác và sắc nét", "pear-shaped": "hình quả lê", "inverted triangle": "tam giác ngược", 
-    "hourglass": "đồng hồ cát", "bean-shaped": "hình hạt đậu", "star-shaped": "hình ngôi sao", "cloud-like": "giống đám mây"
+    "hourglass": "đồng hồ cát", "bean-shaped": "hình hạt đậu", "star-shaped": "hình ngôi sao", "cloud-like": "giống đám mây",
+    "petite": "nhỏ nhắn" // New translation
   },
   proportion_details: {
     "oversized head, small body": "đầu to, thân nhỏ", "realistic human proportions": "tỷ lệ người thực tế", "elongated limbs, small torso": "tay chân dài, thân nhỏ",
-    "chubby and compact": "mập mạp và nhỏ gọn", "top-heavy, large upper body": "nặng trên, thân trên to", "bottom-heavy, large lower body": "nặng dưới, thân dưới to",
+    "chubby and compact": "mập mập và nhỏ gọn", "top-heavy, large upper body": "nặng trên, thân trên to", "bottom-heavy, large lower body": "nặng dưới, thân dưới to",
     "insectoid limbs": "chi côn trùng", "no visible limbs, floating": "không chi, lơ lửng", "serpentine tail instead of legs": "đuôi rắn thay chân",
     "multiple arms": "nhiều tay", "extra long neck": "cổ cực dài", "tiny feet, large hands": "chân nhỏ, tay to"
   },
@@ -130,7 +132,8 @@ export const translations = {
   material_1: {
     "soft vinyl": "vinyl mềm", "metal": "kim loại", "plastic": "nhựa", "silicone": "silicone", "wood": "gỗ", "fabric": "vải", "glass": "thủy tinh", "rubber": "cao su",
     "felt": "nỉ", "velvet": "nhung", "holographic film": "phim hologram", "glitter": "kim tuyến", "rough paper": "giấy nhám", "polished chrome": "chrome bóng",
-    "knitted wool": "len đan", "rough stone": "đá thô", "glowing plasma": "plasma phát sáng", "origami paper": "giấy origami", "clay": "đất sét", "ice": "băng"
+    "knitted wool": "len đan", "rough stone": "đá thô", "glowing plasma": "plasma phát sáng", "origami paper": "giấy origami", "clay": "đất sét", "ice": "băng",
+    "plush": "vải nhung" // New translation
   },
   material_2: {
     "matte plastic": "nhựa mờ", "brushed aluminum": "nhôm xước", "transparent acrylic": "acrylic trong suốt", "soft leather": "da mềm", "polished wood": "gỗ bóng",

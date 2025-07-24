@@ -9,7 +9,7 @@ export const optionChoices = {
     "young, friendly, curious", "mature, wise, calm", "energetic, playful, gender-neutral",
     "bold, mischievous, male", "shy, thoughtful, female", "stoic, determined, robotic",
     "goofy, optimistic, animal-like", "sassy, confident, alien", "adventurous, brave, explorer",
-    "gentle, loyal, plant-based", "sarcastic, witty, object-like"
+    "gentle, loyal, plant-based", "sarcastic, witty, object-like", "young, moody boy" // New choice
   ],
   costume_type: [
     "simple jumpsuit", "futuristic armor", "casual streetwear", "elegant gown",
@@ -26,7 +26,7 @@ export const optionChoices = {
   body_shape: [
     "round and soft", "tall and slender", "short and stout", "athletic and muscular",
     "boxy and geometric", "fluid and amorphous", "triangular and sharp", "pear-shaped",
-    "inverted triangle", "hourglass", "bean-shaped", "star-shaped", "cloud-like"
+    "inverted triangle", "hourglass", "bean-shaped", "star-shaped", "cloud-like", "petite" // New choice
   ],
   proportion_details: [
     "oversized head, small body", "realistic human proportions", "elongated limbs, small torso",
@@ -83,7 +83,7 @@ export const optionChoices = {
   material_1: [
     "soft vinyl", "metal", "plastic", "silicone", "wood", "fabric", "glass", "rubber",
     "felt", "velvet", "holographic film", "glitter", "rough paper", "polished chrome",
-    "knitted wool", "rough stone", "glowing plasma", "origami paper", "clay", "ice"
+    "knitted wool", "rough stone", "glowing plasma", "origami paper", "clay", "ice", "plush" // New choice
   ],
   material_2: [
     "matte plastic", "brushed aluminum", "transparent acrylic", "soft leather", "polished wood",
