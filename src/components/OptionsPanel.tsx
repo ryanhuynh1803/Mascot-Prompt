@@ -49,7 +49,7 @@ const OptionsPanelComponent = ({
   const totalCount = optionsToShow.length;
 
   return (
-    <Card className="flex flex-col h-full border-2 bg-card transition-colors rounded-lg">
+    <Card className="flex flex-col h-[280px] border-2 bg-card transition-colors rounded-lg"> {/* Set fixed height for the card */}
       <CardHeader className="pb-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -93,7 +93,7 @@ const OptionsPanelComponent = ({
       </CardHeader>
 
       <CardContent className="flex-grow">
-        <ScrollArea className="h-[200px] pr-4"> {/* Changed height from 400px to 200px */}
+        <ScrollArea className="h-[140px] pr-4"> {/* Adjusted height to fit within the new card height */}
           <div className="space-y-4">
             {optionsToShow.map((key, index) => (
               <div key={key} className="animate-fade-in" style={{ animationDelay: `${index * 50}ms` }}>
