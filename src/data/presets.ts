@@ -9,32 +9,5 @@ export interface Preset {
 }
 
 export const presets: Preset[] = [
-  {
-    id: "dinosaur-girl",
-    name: "Cô bé khủng long",
-    description: "Một cô bé chibi cáu kỉnh trong bộ đồ khủng long đáng yêu, phong cách truyện tranh.",
-    imageUrl: "https://i.pinimg.com/1200x/ce/31/a8/ce31a87217b46a9981ffa7c2d4dd9c50.jpg", // Reverted to original default image
-    options: {
-      art_style: "Chibi",
-      age_gender_personality: "young, friendly, curious", 
-      costume_type: "animal costume",
-      design_theme: "Storybook",
-      body_shape: "round and soft",
-      proportion_details: "oversized head, small body",
-      pose_and_attitude: "standing, hands in pockets, unimpressed", 
-      costume_description: "green dinosaur hoodie, soft textures, pink spikes, long tail, dragon-like hood", 
-      accessory_detail: "", 
-      animal_or_theme_inspiration: "a mystical dragon", 
-      hair_style: "grayish-brown, peeking from under hood",
-      face_features: "pouty cheeks, blushing skin, large cartoon eyes, narrowed eyes, furrowed brows", 
-      emotion_or_attitude: "grumpy but lovable",
-      material_1: "felt",
-      material_2: "fabric",
-      material_3: "smooth fabric",
-      surface_feel: "soft and plush",
-      lighting_style: "soft studio lighting",
-      background_type: "clean soft pastel green background",
-      application_context: "character merchandise, animated storybooks, collectible vinyl figures", 
-    },
-  },
+  // Danh sách mẫu hiện đang trống
 ];
