@@ -39,8 +39,8 @@ const LandingPage = () => {
           left: mousePosition.x,
           top: mousePosition.y,
           transform: 'translate(-50%, -50%)',
-          background: 'radial-gradient(circle at center, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 70%)',
-          boxShadow: '0 0 15px 5px rgba(255, 255, 255, 0.4)' // Thêm hiệu ứng phát sáng nhẹ
+          background: 'radial-gradient(circle at center, rgba(255, 192, 203, 0.6) 0%, rgba(255, 192, 203, 0) 70%)', // Đã thay đổi thành gradient hồng
+          boxShadow: '0 0 15px 5px rgba(255, 192, 203, 0.4)' // Đã thay đổi bóng đổ thành màu hồng
         }}
       />
 
