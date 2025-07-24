@@ -39,14 +39,14 @@ export const optionChoices = {
     "jumping with joy, arms outstretched", "thinking pose, hand on chin", "dancing playfully, one leg raised",
     "leaning casually against an invisible wall", "hovering in air, arms crossed", "balancing on one finger",
     "sneaking quietly, tiptoeing", "presenting something with open palms", "giving a thumbs up",
-    "standing, hands in pockets, unimpressed" // New option
+    "standing, hands in pockets, unimpressed"
   ],
   costume_description: [
     "minimalist, with a small logo", "intricate patterns and glowing lines", "worn and patched, with utility pockets",
     "flowing fabric, adorned with jewels", "sleek and form-fitting, with metallic accents", "colorful and whimsical, with oversized buttons",
     "rugged and practical, with many straps", "elegant and flowing, with subtle embroidery", "futuristic and segmented",
     "organic and leafy", "sparkling and ethereal", "heavy and armored", "light and airy",
-    "green dinosaur hoodie, soft textures, pink spikes, long tail, dragon-like hood" // New option
+    "green dinosaur hoodie, soft textures, pink spikes, long tail, dragon-like hood"
   ],
   accessory_detail: [
     "a small backpack", "oversized headphones", "a futuristic tablet", "a magical staff",
@@ -65,14 +65,14 @@ export const optionChoices = {
     "braided pigtails", "bald with a unique headpiece", "wild and messy", "afro",
     "dreadlocks", "mohawk", "made of leaves", "flowing like water", "glowing strands",
     "digital data stream", "feathered crest", "hooded with glowing lines",
-    "grayish-brown, peeking from under hood" // New option
+    "grayish-brown, peeking from under hood"
   ],
   face_features: [
     "large, expressive eyes and a wide smile", "small, dot eyes and a tiny smirk", "almond-shaped eyes and thin lips",
     "star-shaped pupils and an open mouth", "half-closed sleepy eyes and a gentle smile", "wide surprised eyes and an 'O' mouth",
     "cool sunglasses and a confident grin", "button eyes and a stitched mouth", "no eyes, just smooth face",
     "glowing LED eyes and a robotic mouth", "heterochromatic eyes and a playful tongue out", "X-shaped eyes and a goofy grin",
-    "pouty cheeks, blushing skin, large cartoon eyes, narrowed eyes, furrowed brows" // New option
+    "pouty cheeks, blushing skin, large cartoon eyes, narrowed eyes, furrowed brows"
   ],
   emotion_or_attitude: [
     "joyful and approachable", "calm and serene", "energetic and excited", "thoughtful and contemplative",
@@ -112,7 +112,7 @@ export const optionChoices = {
     "digital circuit board", "vintage blueprint", "chalkboard drawing",
     "watercolor splash", "pixelated retro game scene", "futuristic data stream",
     "dreamy cloudscape", "underwater coral reef", "ancient ruins", "cyberpunk alley",
-    "clean soft pastel green background" // New option
+    "clean soft pastel green background"
   ],
   application_context: [
     "educational mobile app", "tech website", "finance branding", "FMCG packaging",
@@ -120,6 +120,15 @@ export const optionChoices = {
     "non-profit awareness", "environmental initiative", "travel agency branding",
     "fashion line promotion", "real estate marketing", "music album cover",
     "book illustration", "automotive advertisement", "luxury brand identity",
-    "character merchandise, animated storybooks, collectible vinyl figures" // New option
+    "character merchandise, animated storybooks, collectible vinyl figures"
+  ],
+  leg_shape: [ // New
+    "short and stubby", "long and slender", "athletic and strong", "digitigrade (animal-like)",
+    "plantigrade (human-like)", "mechanical limbs", "tentacle-like", "no visible legs, floating"
+  ],
+  footwear: [ // New
+    "simple sneakers", "futuristic boots", "barefoot", "sandals", "high heels",
+    "robot feet", "animal paws", "rollerblades", "hover shoes", "traditional clogs",
+    "armored greaves", "glowing energy boots"
   ]
 };

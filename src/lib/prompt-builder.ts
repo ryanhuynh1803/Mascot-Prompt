@@ -27,6 +27,10 @@ export const buildPrompt = (options: Partial<PromptOptions>): string => {
   if (get('accessory_detail')) parts.push(`with ${get('accessory_detail')}`);
   if (get('animal_or_theme_inspiration')) parts.push(`inspired by ${get('animal_or_theme_inspiration')}`);
 
+  // Legs (New)
+  if (get('leg_shape')) parts.push(`${get('leg_shape')} legs`);
+  if (get('footwear')) parts.push(`${get('footwear')}`);
+
   // Face
   if (get('hair_style')) parts.push(`${get('hair_style')} hair`);
   if (get('face_features')) parts.push(`${get('face_features')}`);

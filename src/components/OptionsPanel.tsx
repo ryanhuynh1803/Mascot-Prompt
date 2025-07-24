@@ -23,6 +23,7 @@ interface OptionsPanelProps {
 const partLabels: Record<BodyPart, string> = {
   character: 'Nhân vật',
   costume: 'Trang phục',
+  legs: 'Chân', // New
   face: 'Khuôn mặt',
   materials: 'Chất liệu',
   environment: 'Môi trường',

@@ -19,6 +19,8 @@ export const optionKeyTranslations: Record<string, string> = {
   lighting_style: "Phong cách ánh sáng",
   background_type: "Loại nền",
   application_context: "Ngữ cảnh ứng dụng",
+  leg_shape: "Hình dạng chân", // New
+  footwear: "Giày dép", // New
 };
 
 export const translations = {
@@ -53,7 +55,7 @@ export const translations = {
     "cyberpunk neon": "neon cyberpunk", "minimalist abstract": "trừu tượng tối giản", "whimsical fairytale": "cổ tích kỳ ảo", 
     "space exploration": "khám phá không gian", "ancient mythology": "thần thoại cổ đại", "oceanic adventure": "phiêu lưu đại dương",
     "desert nomad": "du mục sa mạc", "arctic explorer": "nhà thám hiểm Bắc Cực", "jungle safari": "safari rừng rậm", "victorian gothic": "Gothic Victoria",
-    "Storybook": "Sách truyện" // New translation
+    "Storybook": "Sách truyện"
   },
   body_shape: {
     "round and soft": "tròn và mềm mại", "tall and slender": "cao và mảnh khảnh", "short and stout": "ngắn và mập mạp", 
@@ -74,8 +76,8 @@ export const translations = {
     "leaning casually against an invisible wall": "tựa vào tường vô hình", "hovering in air, arms crossed": "lơ lửng, khoanh tay", 
     "balancing on one finger": "thăng bằng trên một ngón tay", "sneaking quietly, tiptoeing": "rón rén, đi nhón chân", 
     "presenting something with open palms": "giới thiệu bằng lòng bàn tay", 
-    "giving a thumbs up": "giơ ngón cái lên", // Fixed: Added translation
-    "standing, hands in pockets, unimpressed": "đứng, tay đút túi, vẻ mặt không hài lòng" // New translation
+    "giving a thumbs up": "giơ ngón cái lên",
+    "standing, hands in pockets, unimpressed": "đứng, tay đút túi, vẻ mặt không hài lòng"
   },
   costume_description: {
     "minimalist, with a small logo": "tối giản, có logo nhỏ", "intricate patterns and glowing lines": "hoa văn phức tạp và đường nét phát sáng", 
@@ -84,7 +86,7 @@ export const translations = {
     "rugged and practical, with many straps": "gồ ghề và thực tế, có nhiều dây đai", "elegant and flowing, with subtle embroidery": "thanh lịch và bay bổng, có thêu tinh tế", 
     "futuristic and segmented": "tương lai và phân đoạn", "organic and leafy": "hữu cơ và nhiều lá", "sparkling and ethereal": "lấp lánh và thanh tao", 
     "heavy and armored": "nặng và có giáp", "light and airy": "nhẹ và thoáng",
-    "green dinosaur hoodie, soft textures, pink spikes, long tail, dragon-like hood": "áo hoodie khủng long xanh, kết cấu mềm mại, gai hồng, đuôi dài, mũ trùm đầu hình rồng" // New translation
+    "green dinosaur hoodie, soft textures, pink spikes, long tail, dragon-like hood": "áo hoodie khủng long xanh, kết cấu mềm mại, gai hồng, đuôi dài, mũ trùm đầu hình rồng"
   },
   accessory_detail: {
     "a small backpack": "một chiếc ba lô nhỏ", "oversized headphones": "tai nghe quá khổ", "a futuristic tablet": "một máy tính bảng tương lai", 
@@ -106,7 +108,7 @@ export const translations = {
     "wild and messy": "hoang dã và rối", "afro": "tóc Afro", "dreadlocks": "tóc Dreadlocks", "mohawk": "tóc Mohawk", 
     "made of leaves": "làm từ lá", "flowing like water": "bay bổng như nước", "glowing strands": "sợi tóc phát sáng",
     "digital data stream": "dòng dữ liệu số", "feathered crest": "mào lông vũ", "hooded with glowing lines": "đội mũ trùm với đường kẻ phát sáng",
-    "grayish-brown, peeking from under hood": "nâu xám, ló ra từ dưới mũ trùm" // New translation
+    "grayish-brown, peeking from under hood": "nâu xám, ló ra từ dưới mũ trùm"
   },
   face_features: {
     "large, expressive eyes and a wide smile": "mắt to, biểu cảm và nụ cười rộng", "small, dot eyes and a tiny smirk": "mắt chấm nhỏ và nụ cười mỉm", 
@@ -115,8 +117,8 @@ export const translations = {
     "cool sunglasses and a confident grin": "kính râm ngầu và nụ cười tự tin", "button eyes and a stitched mouth": "mắt cúc áo và miệng khâu", 
     "no eyes, just smooth face": "không mắt, chỉ mặt trơn", "glowing LED eyes and a robotic mouth": "mắt LED phát sáng và miệng robot", 
     "heterochromatic eyes and a playful tongue out": "mắt hai màu và lè lưỡi tinh nghịch", 
-    "X-shaped eyes and a goofy grin": "mắt hình chữ X và nụ cười ngốc nghếch", // Fixed: Added translation
-    "pouty cheeks, blushing skin, large cartoon eyes, narrowed eyes, furrowed brows": "má phúng phính, da ửng hồng, mắt hoạt hình to, mắt híp, lông mày cau lại" // New translation
+    "X-shaped eyes and a goofy grin": "mắt hình chữ X và nụ cười ngốc nghếch",
+    "pouty cheeks, blushing skin, large cartoon eyes, narrowed eyes, furrowed brows": "má phúng phính, da ửng hồng, mắt hoạt hình to, mắt híp, lông mày cau lại"
   },
   emotion_or_attitude: {
     "joyful and approachable": "vui vẻ và dễ gần", "calm and serene": "điềm tĩnh và thanh thản", "energetic and excited": "năng động và hào hứng", 
@@ -157,8 +159,8 @@ export const translations = {
     "digital circuit board": "bảng mạch kỹ thuật số", "vintage blueprint": "bản thiết kế cổ điển", "chalkboard drawing": "bản vẽ bảng phấn",
     "watercolor splash": "vết màu nước", "pixelated retro game scene": "cảnh game retro pixel", "futuristic data stream": "dòng dữ liệu tương lai",
     "dreamy cloudscape": "cảnh mây mơ màng", "underwater coral reef": "rạn san hô dưới nước", "ancient ruins": "tàn tích cổ đại", 
-    "cyberpunk alley": "hẻm cyberpunk", // Fixed: Added translation
-    "clean soft pastel green background": "nền xanh pastel mềm mại, sạch sẽ" // New translation
+    "cyberpunk alley": "hẻm cyberpunk",
+    "clean soft pastel green background": "nền xanh pastel mềm mại, sạch sẽ"
   },
   application_context: {
     "educational mobile app": "ứng dụng di động giáo dục", "tech website": "trang web công nghệ", "finance branding": "thương hiệu tài chính", 
@@ -167,6 +169,15 @@ export const translations = {
     "environmental initiative": "sáng kiến môi trường", "travel agency branding": "thương hiệu công ty du lịch", "fashion line promotion": "quảng bá dòng thời trang", 
     "real estate marketing": "tiếp thị bất động sản", "music album cover": "bìa album nhạc", "book illustration": "minh họa sách", 
     "automotive advertisement": "quảng cáo ô tô", "luxury brand identity": "nhận diện thương hiệu xa xỉ",
-    "character merchandise, animated storybooks, collectible vinyl figures": "hàng hóa nhân vật, sách truyện hoạt hình, tượng vinyl sưu tầm" // New translation
+    "character merchandise, animated storybooks, collectible vinyl figures": "hàng hóa nhân vật, sách truyện hoạt hình, tượng vinyl sưu tầm"
+  },
+  leg_shape: { // New
+    "short and stubby": "ngắn và mập", "long and slender": "dài và mảnh khảnh", "athletic and strong": "khỏe mạnh và thể thao", "digitigrade (animal-like)": "dạng ngón (giống động vật)",
+    "plantigrade (human-like)": "dạng bàn chân (giống người)", "mechanical limbs": "chân máy móc", "tentacle-like": "giống xúc tu", "no visible legs, floating": "không chân, lơ lửng"
+  },
+  footwear: { // New
+    "simple sneakers": "giày thể thao đơn giản", "futuristic boots": "giày bốt tương lai", "barefoot": "chân trần", "sandals": "dép", "high heels": "giày cao gót",
+    "robot feet": "bàn chân robot", "animal paws": "chân động vật", "rollerblades": "giày patin", "hover shoes": "giày bay", "traditional clogs": "guốc truyền thống",
+    "armored greaves": "giáp chân", "glowing energy boots": "giày năng lượng phát sáng"
   }
 };

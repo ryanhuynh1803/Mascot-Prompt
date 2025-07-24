@@ -14,6 +14,7 @@ interface MascotPreviewProps {
 const bodyParts: { part: BodyPart; label: string }[] = [
   { part: 'character', label: 'Nhân vật' },
   { part: 'costume', label: 'Trang phục' },
+  { part: 'legs', label: 'Chân' }, // New
   { part: 'face', label: 'Khuôn mặt' },
   { part: 'materials', label: 'Chất liệu' },
   { part: 'environment', label: 'Môi trường' },
@@ -141,6 +142,29 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect, mascotI
                   </div>
                 )}
               </button>
+
+              {/* Legs Area (new) */}
+              <button
+                onClick={() => onBodyPartSelect('legs')}
+                className={`
+                  absolute bottom-[5%] left-1/2 transform -translate-x-1/2 w-[60%] h-[30%] rounded-lg
+                  transition-all duration-300 border-2 focus:outline-none focus:ring-2 focus:ring-foreground
+                  ${selectedBodyPart === 'legs' 
+                    ? 'border-foreground ring-2 ring-foreground' 
+                    : 'bg-transparent hover:bg-transparent border-transparent'
+                  }
+                `}
+                title="Click để chỉnh sửa phần chân"
+                aria-label="Chỉnh sửa phần chân"
+              >
+                {selectedBodyPart === 'legs' && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Badge variant="default" className="text-xs font-bold rounded-md">
+                      CHÂN
+                    </Badge>
+                  </div>
+                )}
+              </button>
             </div>
           </div>
         </div>
@@ -152,7 +176,7 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect, mascotI
           className="w-full max-w-[300px]"
         >
           <ScrollArea className="w-full whitespace-nowrap" ref={scrollAreaRef}>
-            <TabsList className="w-max bg-muted p-1 rounded-md">
+            <TabsList className="w-max bg-muted p-1 rounded-md" ref={tabsListRef}>
               {bodyParts.map(({ part, label }) => (
                 <TabsTrigger 
                   key={part} 
