@@ -1,20 +1,19 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { presets, Preset } from "@/data/presets";
-import { PromptOptions } from "@/types/mascot";
 import { useToast } from "@/components/ui/use-toast";
+import { Button } from "@/components/ui/button"; // Ensure Button is imported
 
 interface PresetSelectorProps {
-  onApplyPreset: (preset: Preset) => void; // Changed to accept full Preset object
+  onApplyPreset: (preset: Preset) => void;
 }
 
 export const PresetSelector = ({ onApplyPreset }: PresetSelectorProps) => {
   const { toast } = useToast();
 
   const handleSelectPreset = (preset: Preset) => {
-    onApplyPreset(preset); // Pass the full Preset object
+    onApplyPreset(preset);
     toast({
       title: "Đã áp dụng mẫu!",
       description: `Mẫu "${preset.name}" đã được áp dụng thành công.`,
@@ -32,12 +31,12 @@ export const PresetSelector = ({ onApplyPreset }: PresetSelectorProps) => {
         </p>
       </CardHeader>
       <CardContent>
-        <ScrollArea className="h-[250px] pr-4">
-          <div className="grid grid-cols-1 gap-4">
+        <ScrollArea className="w-full whitespace-nowrap pb-4"> {/* Changed to horizontal scroll */}
+          <div className="flex gap-4"> {/* Changed to flex for horizontal layout */}
             {presets.map((preset) => (
               <div 
                 key={preset.id} 
-                className="flex items-center gap-4 p-3 border rounded-md bg-muted/20 hover:bg-muted/50 transition-colors cursor-pointer"
+                className="flex items-center gap-4 p-3 border rounded-md bg-muted/20 hover:bg-muted/50 transition-colors cursor-pointer shrink-0 w-[280px]" // Added shrink-0 and fixed width
                 onClick={() => handleSelectPreset(preset)}
               >
                 {preset.imageUrl && (
@@ -62,7 +61,7 @@ export const PresetSelector = ({ onApplyPreset }: PresetSelectorProps) => {
               </div>
             ))}
           </div>
-          <ScrollBar orientation="vertical" />
+          <ScrollBar orientation="horizontal" /> {/* Horizontal scrollbar */}
         </ScrollArea>
       </CardContent>
     </Card>

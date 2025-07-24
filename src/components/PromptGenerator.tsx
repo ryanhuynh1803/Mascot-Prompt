@@ -48,66 +48,72 @@ export function PromptGenerator() {
         </header>
 
         {/* Main Content Grid */}
-        <main className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
-          {/* Left Panel - Options & Presets */}
-          <section className="lg:col-span-4 order-2 lg:order-1 space-y-6">
-            <OptionsPanel 
-              selectedBodyPart={selectedBodyPart}
-              options={options}
-              onOptionChange={updateOption}
-              onNext={handleNextPart}
-              onPrevious={handlePreviousPart}
-              onReset={handleReset}
-              onRandom={handleRandom}
-              currentPage={currentPage}
-              totalPages={totalPages}
-            />
+        <main className="space-y-6"> {/* Added space-y-6 for spacing between sections */}
+          {/* Preset Selector Section (moved to top) */}
+          <section>
             <PresetSelector onApplyPreset={handleApplyPreset} />
           </section>
 
-          {/* Center Panel - Mascot Preview */}
-          <section className="lg:col-span-4 order-1 lg:order-2">
-            <MascotPreview 
-              selectedBodyPart={selectedBodyPart}
-              onBodyPartSelect={handleBodyPartSelect}
-              mascotImageUrl={mascotImageUrl}
-            />
-          </section>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
+            {/* Left Panel - Options */}
+            <section className="lg:col-span-4 order-2 lg:order-1 space-y-6">
+              <OptionsPanel 
+                selectedBodyPart={selectedBodyPart}
+                options={options}
+                onOptionChange={updateOption}
+                onNext={handleNextPart}
+                onPrevious={handlePreviousPart}
+                onReset={handleReset}
+                onRandom={handleRandom}
+                currentPage={currentPage}
+                totalPages={totalPages}
+              />
+            </section>
 
-          {/* Right Panel - Results & Export */}
-          <section className="lg:col-span-4 order-3 space-y-6">
-            <SelectedOptions options={options} />
-            <PromptPreview options={options} />
-            
-            {/* Enhanced Footer */}
-            <footer className="bg-card rounded-lg p-4 border rounded-lg">
-              <div className="text-center text-xs text-muted-foreground space-y-2">
-                <div className="flex items-center justify-center gap-2">
-                  <Badge variant="outline" className="text-xs rounded-md">
-                    Phiên bản 6.0
-                  </Badge>
-                  <span>•</span>
-                  <span>Cập nhật: {today}</span>
+            {/* Center Panel - Mascot Preview */}
+            <section className="lg:col-span-4 order-1 lg:order-2">
+              <MascotPreview 
+                selectedBodyPart={selectedBodyPart}
+                onBodyPartSelect={handleBodyPartSelect}
+                mascotImageUrl={mascotImageUrl}
+              />
+            </section>
+
+            {/* Right Panel - Results & Export */}
+            <section className="lg:col-span-4 order-3 space-y-6">
+              <SelectedOptions options={options} />
+              <PromptPreview options={options} />
+              
+              {/* Enhanced Footer */}
+              <footer className="bg-card rounded-lg p-4 border rounded-lg">
+                <div className="text-center text-xs text-muted-foreground space-y-2">
+                  <div className="flex items-center justify-center gap-2">
+                    <Badge variant="outline" className="text-xs rounded-md">
+                      Phiên bản 6.0
+                    </Badge>
+                    <span>•</span>
+                    <span>Cập nhật: {today}</span>
+                  </div>
+                  <p>
+                    Tạo bởi{" "}
+                    <a 
+                      href="https://www.facebook.com/tu.huynh1803/" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-primary hover:underline font-semibold inline-flex items-center gap-1"
+                    >
+                      Ryanocode
+                    </a>
+                  </p>
+                  <div className="flex items-center justify-center gap-4 text-xs">
+                    <span>Người truy cập: {visitorCount}</span>
+                    <span>•</span>
+                    <span className="text-green-600 font-medium">Online</span>
+                  </div>
                 </div>
-                <p>
-                  Tạo bởi{" "}
-                  <a 
-                    href="https://www.facebook.com/tu.huynh1803/" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="text-primary hover:underline font-semibold inline-flex items-center gap-1"
-                  >
-                    Ryanocode
-                  </a>
-                </p>
-                <div className="flex items-center justify-center gap-4 text-xs">
-                  <span>Người truy cập: {visitorCount}</span>
-                  <span>•</span>
-                  <span className="text-green-600 font-medium">Online</span>
-                </div>
-              </div>
-            </footer>
-          </section>
+              </footer>
+            </section>
+          </div>
         </main>
       </div>
     </div>
