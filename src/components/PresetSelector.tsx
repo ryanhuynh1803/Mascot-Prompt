@@ -22,7 +22,7 @@ export const PresetSelector = ({ onApplyPreset }: PresetSelectorProps) => {
 
   return (
     <Card className="border-2 bg-card transition-colors rounded-lg">
-      <CardHeader>
+      <CardHeader className="hidden"> {/* Hidden CardHeader */}
         <CardTitle className="flex items-center gap-2">
           Mẫu có sẵn
         </CardTitle>
