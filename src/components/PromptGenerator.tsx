@@ -3,7 +3,6 @@ import { MascotPreview } from "./MascotPreview";
 import OptionsPanel from "./OptionsPanel";
 import { PromptPreview } from "./PromptPreview";
 import { SelectedOptions } from "./SelectedOptions";
-import { ExportOptions } from "./ExportOptions";
 import { useMascotConfig } from "@/hooks/useMascotConfig";
 import { Badge } from "@/components/ui/badge";
 import { PromptOptions } from "@/types/mascot";
@@ -58,7 +57,6 @@ export function PromptGenerator() {
         <main className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
           {/* Left Panel - Options & Presets */}
           <section className="lg:col-span-4 order-2 lg:order-1 space-y-6">
-            {/* <QuickPresets onApplyPreset={handleApplyPreset} /> */} {/* Removed QuickPresets */}
             <OptionsPanel 
               selectedBodyPart={selectedBodyPart}
               options={options}
@@ -84,7 +82,6 @@ export function PromptGenerator() {
           <section className="lg:col-span-4 order-3 space-y-6">
             <SelectedOptions options={options} />
             <PromptPreview options={options} />
-            <ExportOptions options={options} />
             
             {/* Enhanced Footer */}
             <footer className="bg-card/50 backdrop-blur-sm rounded-lg p-4 border">
