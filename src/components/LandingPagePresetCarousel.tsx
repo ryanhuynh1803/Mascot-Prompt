@@ -1,8 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-// import { Button } from "@/components/ui/button"; // Removed Button import
 import { presets } from "@/data/presets";
 
 export const LandingPagePresetCarousel = () => {
@@ -13,36 +11,27 @@ export const LandingPagePresetCarousel = () => {
   };
 
   return (
-    <Card className="bg-card transition-colors rounded-lg border-none shadow-lg">
-      <CardHeader className="pb-2">
-        <CardTitle className="text-2xl font-bold text-center">
-          Khám phá các mẫu có sẵn
-        </CardTitle>
-        <p className="text-center text-muted-foreground text-sm">
-          Chọn một mẫu để bắt đầu hoặc tạo mới từ đầu.
-        </p>
-      </CardHeader>
-      <CardContent className="px-6 py-4">
+    <div className="w-full"> {/* Replaced Card with a simple div */}
+      <div className="px-6 py-4"> {/* Kept padding from CardContent */}
         <ScrollArea className="w-full whitespace-nowrap pb-4">
           <div className="flex gap-4 py-2">
             {presets.map((preset) => (
               <div 
                 key={preset.id} 
-                onClick={() => handleSelectPreset(preset.id)} // Make the div clickable
-                className="flex-none w-[250px] rounded-lg overflow-hidden border bg-background shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer" // Added cursor-pointer
+                onClick={() => handleSelectPreset(preset.id)} 
+                className="flex-none w-[250px] rounded-lg overflow-hidden cursor-pointer" // Removed border, bg-background, shadow classes
               >
                 <img 
                   src={preset.imageUrl || "/public/placeholder.svg"}
                   alt={preset.name} 
-                  className="w-full h-32 object-cover"
+                  className="w-full h-32 object-cover rounded-lg" // Added rounded-lg to image
                 />
-                {/* Removed the div with h3 and Button */}
               </div>
             ))}
           </div>
           <ScrollBar orientation="horizontal" />
         </ScrollArea>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 };
