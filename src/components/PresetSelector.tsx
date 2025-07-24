@@ -21,7 +21,7 @@ export const PresetSelector = ({ onApplyPreset }: PresetSelectorProps) => {
   };
 
   return (
-    <Card className="bg-card transition-colors rounded-lg border-none"> {/* Added border-none to remove outer border */}
+    <Card className="bg-card transition-colors rounded-lg border-none">
       <CardHeader className="hidden">
         <CardTitle className="flex items-center gap-2">
           Mẫu có sẵn
@@ -30,21 +30,21 @@ export const PresetSelector = ({ onApplyPreset }: PresetSelectorProps) => {
           Chọn một mẫu để áp dụng các tùy chọn đã định sẵn.
         </p>
       </CardHeader>
-      <CardContent>
-        <ScrollArea className="w-full whitespace-nowrap pb-4">
+      <CardContent className="px-6 py-4"> {/* Adjusted padding for CardContent */}
+        <ScrollArea className="w-full whitespace-nowrap"> {/* Removed pb-4 from ScrollArea */}
           <div className="flex gap-4">
             {presets.map((preset) => (
               <Button
                 key={preset.id} 
                 onClick={() => handleSelectPreset(preset)}
-                className="flex items-center gap-4 p-3 rounded-md bg-muted/20 hover:bg-muted/50 transition-colors cursor-pointer shrink-0 w-[240px] h-auto justify-start text-left" // Reduced width to w-[240px]
+                className="flex items-center gap-3 p-2 rounded-md bg-muted/20 hover:bg-muted/50 transition-colors cursor-pointer shrink-0 w-[220px] h-auto justify-start text-left" // Reduced width to w-[220px] and padding to p-2
                 variant="ghost"
               >
                 {preset.imageUrl && (
                   <img 
                     src={preset.imageUrl} 
                     alt={preset.name} 
-                    className="w-16 h-16 object-cover rounded-md"
+                    className="w-14 h-14 object-cover rounded-md" // Reduced image size to w-14 h-14
                   />
                 )}
                 <div className="flex-1 overflow-hidden">
