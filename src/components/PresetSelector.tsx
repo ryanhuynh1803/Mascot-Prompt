@@ -21,7 +21,7 @@ export const PresetSelector = ({ onApplyPreset }: PresetSelectorProps) => {
   };
 
   return (
-    <Card className="bg-card transition-colors rounded-lg"> {/* Removed border-2 */}
+    <Card className="bg-card transition-colors rounded-lg shadow-none"> {/* Removed border-2 and added shadow-none */}
       <CardHeader className="hidden"> {/* Hidden CardHeader */}
         <CardTitle className="flex items-center gap-2">
           Mẫu có sẵn
@@ -43,7 +43,7 @@ export const PresetSelector = ({ onApplyPreset }: PresetSelectorProps) => {
                   <img 
                     src={preset.imageUrl} 
                     alt={preset.name} 
-                    className="w-16 h-16 object-cover rounded-md border border-muted-foreground/20" 
+                    className="w-16 h-16 object-cover rounded-md" // Removed border from image
                   />
                 )}
                 <div className="flex-1">
