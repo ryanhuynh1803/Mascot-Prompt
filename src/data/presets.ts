@@ -11,8 +11,8 @@ export interface Preset {
 export const presets: Preset[] = [
   {
     id: "template-1",
-    name: "Mẫu 1: Cậu bé khủng long ủ rũ",
-    description: "Một nhân vật chibi 3D của cậu bé ủ rũ mặc bộ đồ khủng long, với đầu to và biểu cảm cau có.",
+    name: "Mẫu 1", // Simplified name
+    description: "", // Removed description
     options: {
       art_style: "Chibi",
       age_gender_personality: "young, moody boy",
@@ -37,6 +37,6 @@ export const presets: Preset[] = [
       leg_shape: "short and stubby", 
       footwear: "simple sneakers", 
     },
-    imageUrl: "https://i.pinimg.com/1200x/ce/31/a8/ce31a87217b46a9981ffa7c2d4dd9c50.jpg", // Using the existing placeholder image
+    imageUrl: "/images/cau-be-khung-long.png", // Updated image URL
   },
 ];

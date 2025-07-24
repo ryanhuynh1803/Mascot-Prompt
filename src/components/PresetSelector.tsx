@@ -49,7 +49,7 @@ export const PresetSelector = ({ onApplyPreset }: PresetSelectorProps) => {
                 )}
                 <div className="flex-1 overflow-hidden">
                   <h3 className="font-semibold text-foreground truncate">{preset.name}</h3>
-                  <p className="text-xs text-muted-foreground line-clamp-2">{preset.description}</p>
+                  {/* Removed preset.description */}
                 </div>
               </Button>
             ))}
