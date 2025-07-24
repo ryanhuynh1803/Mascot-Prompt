@@ -11,20 +11,20 @@ export const LandingPagePresetCarousel = () => {
   };
 
   return (
-    <div className="w-full"> {/* Replaced Card with a simple div */}
-      <div className="px-6 py-4"> {/* Kept padding from CardContent */}
+    <div className="w-full">
+      <div className="px-6 py-4">
         <ScrollArea className="w-full whitespace-nowrap pb-4">
           <div className="flex gap-4 py-2">
             {presets.map((preset) => (
               <div 
                 key={preset.id} 
                 onClick={() => handleSelectPreset(preset.id)} 
-                className="flex-none w-[250px] rounded-lg overflow-hidden cursor-pointer" // Removed border, bg-background, shadow classes
+                className="flex-none w-[250px] rounded-lg overflow-hidden cursor-pointer"
               >
                 <img 
                   src={preset.imageUrl || "/public/placeholder.svg"}
                   alt={preset.name} 
-                  className="w-full h-32 object-cover rounded-lg" // Added rounded-lg to image
+                  className="w-full h-[350px] object-cover rounded-lg" // Changed height to h-[350px] for vertical rectangle
                 />
               </div>
             ))}
