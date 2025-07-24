@@ -4,7 +4,6 @@ import OptionsPanel from "./OptionsPanel";
 import { PromptPreview } from "./PromptPreview";
 import { SelectedOptions } from "./SelectedOptions";
 import { ExportOptions } from "./ExportOptions";
-import { QuickPresets } from "./QuickPresets";
 import { useMascotConfig } from "@/hooks/useMascotConfig";
 import { Badge } from "@/components/ui/badge";
 import { PromptOptions } from "@/types/mascot";
@@ -59,7 +58,7 @@ export function PromptGenerator() {
         <main className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
           {/* Left Panel - Options & Presets */}
           <section className="lg:col-span-4 order-2 lg:order-1 space-y-6">
-            <QuickPresets onApplyPreset={handleApplyPreset} />
+            {/* <QuickPresets onApplyPreset={handleApplyPreset} /> */} {/* Removed QuickPresets */}
             <OptionsPanel 
               selectedBodyPart={selectedBodyPart}
               options={options}
@@ -103,7 +102,7 @@ export function PromptGenerator() {
                     href="https://www.facebook.com/tu.huynh1803/" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-primary hover:underline font-semibold transition-colors inline-flex items-center gap-1"
+                    className="text-primary hover:underline font-semibold inline-flex items-center gap-1"
                   >
                     Ryanocode
                   </a>
