@@ -48,7 +48,7 @@ export function PromptGenerator() {
         </header>
 
         {/* Main Content Grid */}
-        <main className="space-y-6"> {/* Added space-y-6 for spacing between sections */}
+        <main className="space-y-4"> {/* Changed space-y-6 to space-y-4 to reduce vertical gap */}
           {/* Preset Selector Section (moved to top) */}
           <section>
             <PresetSelector onApplyPreset={handleApplyPreset} />
