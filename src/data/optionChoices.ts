@@ -21,7 +21,7 @@ export const optionChoices = {
     "modern tech", "fantasy realm", "urban street art", "nature-inspired",
     "retro futuristic", "steampunk industrial", "cyberpunk neon", "minimalist abstract",
     "whimsical fairytale", "space exploration", "ancient mythology", "oceanic adventure",
-    "desert nomad", "arctic explorer", "jungle safari", "victorian gothic"
+    "desert nomad", "arctic explorer", "jungle safari", "victorian gothic", "Storybook"
   ],
   body_shape: [
     "round and soft", "tall and slender", "short and stout", "athletic and muscular",
@@ -38,13 +38,15 @@ export const optionChoices = {
     "standing, waving cheerfully", "sitting cross-legged, meditating", "running energetically, looking back",
     "jumping with joy, arms outstretched", "thinking pose, hand on chin", "dancing playfully, one leg raised",
     "leaning casually against an invisible wall", "hovering in air, arms crossed", "balancing on one finger",
-    "sneaking quietly, tiptoeing", "presenting something with open palms", "giving a thumbs up"
+    "sneaking quietly, tiptoeing", "presenting something with open palms", "giving a thumbs up",
+    "standing, hands in pockets, unimpressed" // New option
   ],
   costume_description: [
     "minimalist, with a small logo", "intricate patterns and glowing lines", "worn and patched, with utility pockets",
     "flowing fabric, adorned with jewels", "sleek and form-fitting, with metallic accents", "colorful and whimsical, with oversized buttons",
     "rugged and practical, with many straps", "elegant and flowing, with subtle embroidery", "futuristic and segmented",
-    "organic and leafy", "sparkling and ethereal", "heavy and armored", "light and airy"
+    "organic and leafy", "sparkling and ethereal", "heavy and armored", "light and airy",
+    "green dinosaur hoodie, soft textures, pink spikes, long tail, dragon-like hood" // New option
   ],
   accessory_detail: [
     "a small backpack", "oversized headphones", "a futuristic tablet", "a magical staff",
@@ -62,13 +64,15 @@ export const optionChoices = {
     "short and spiky", "long and flowing", "curly and voluminous", "sleek bob",
     "braided pigtails", "bald with a unique headpiece", "wild and messy", "afro",
     "dreadlocks", "mohawk", "made of leaves", "flowing like water", "glowing strands",
-    "digital data stream", "feathered crest", "hooded with glowing lines"
+    "digital data stream", "feathered crest", "hooded with glowing lines",
+    "grayish-brown, peeking from under hood" // New option
   ],
   face_features: [
     "large, expressive eyes and a wide smile", "small, dot eyes and a tiny smirk", "almond-shaped eyes and thin lips",
     "star-shaped pupils and an open mouth", "half-closed sleepy eyes and a gentle smile", "wide surprised eyes and an 'O' mouth",
     "cool sunglasses and a confident grin", "button eyes and a stitched mouth", "no eyes, just smooth face",
-    "glowing LED eyes and a robotic mouth", "heterochromatic eyes and a playful tongue out", "X-shaped eyes and a goofy grin"
+    "glowing LED eyes and a robotic mouth", "heterochromatic eyes and a playful tongue out", "X-shaped eyes and a goofy grin",
+    "pouty cheeks, blushing skin, large cartoon eyes, narrowed eyes, furrowed brows" // New option
   ],
   emotion_or_attitude: [
     "joyful and approachable", "calm and serene", "energetic and excited", "thoughtful and contemplative",
@@ -107,13 +111,15 @@ export const optionChoices = {
     "stylized city skyline", "lush natural landscape", "outer space nebula",
     "digital circuit board", "vintage blueprint", "chalkboard drawing",
     "watercolor splash", "pixelated retro game scene", "futuristic data stream",
-    "dreamy cloudscape", "underwater coral reef", "ancient ruins", "cyberpunk alley"
+    "dreamy cloudscape", "underwater coral reef", "ancient ruins", "cyberpunk alley",
+    "clean soft pastel green background" // New option
   ],
   application_context: [
     "educational mobile app", "tech website", "finance branding", "FMCG packaging",
     "healthcare campaign", "entertainment platform", "gaming character", "sports team mascot",
     "non-profit awareness", "environmental initiative", "travel agency branding",
     "fashion line promotion", "real estate marketing", "music album cover",
-    "book illustration", "automotive advertisement", "luxury brand identity"
+    "book illustration", "automotive advertisement", "luxury brand identity",
+    "character merchandise, animated storybooks, collectible vinyl figures" // New option
   ]
 };
