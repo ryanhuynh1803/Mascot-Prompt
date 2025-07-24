@@ -93,7 +93,7 @@ const OptionsPanelComponent = ({
       </CardHeader>
 
       <CardContent className="flex-grow">
-        <ScrollArea className="h-[400px] pr-4">
+        <ScrollArea className="h-[200px] pr-4"> {/* Changed height from 400px to 200px */}
           <div className="space-y-4">
             {optionsToShow.map((key, index) => (
               <div key={key} className="animate-fade-in" style={{ animationDelay: `${index * 50}ms` }}>
