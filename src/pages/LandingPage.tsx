@@ -34,7 +34,8 @@ const LandingPage = () => {
         </Button>
       </div>
 
-      <div className="mt-12 w-full max-w-5xl">
+      {/* Removed max-w-5xl to allow full width for the carousel */}
+      <div className="mt-12 w-full"> 
         <LandingPagePresetCarousel />
       </div>
     </div>
