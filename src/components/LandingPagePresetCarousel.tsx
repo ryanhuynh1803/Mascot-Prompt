@@ -17,9 +17,10 @@ export const LandingPagePresetCarousel = () => {
   // Duplicate presets for seamless looping
   const loopedPresets = [...presets, ...presets]; // Duplicate once
 
-  const handleSelectPreset = (presetId: string) => {
-    navigate(`/generator?presetId=${presetId}`);
-  };
+  // Removed handleSelectPreset as it's no longer needed if images are not clickable
+  // const handleSelectPreset = (presetId: string) => {
+  //   navigate(`/generator?presetId=${presetId}`);
+  // };
 
   // Function to stop auto-scrolling
   const stopAutoScroll = useCallback(() => {
@@ -75,14 +76,13 @@ export const LandingPagePresetCarousel = () => {
         >
           <div 
             className="flex gap-4 py-2"
-            // Đã xóa onMouseEnter={stopAutoScroll}
-            // Đã xóa onMouseLeave={startAutoScroll}
           >
             {loopedPresets.map((preset, index) => (
               <div 
                 key={`${preset.id}-${index}`}
-                onClick={() => handleSelectPreset(preset.id)} 
-                className="flex-none w-[250px] rounded-lg overflow-hidden cursor-pointer"
+                // Đã xóa onClick={() => handleSelectPreset(preset.id)} 
+                // Đổi cursor thành default
+                className="flex-none w-[250px] rounded-lg overflow-hidden cursor-default"
               >
                 <img 
                   src={preset.imageUrl || "/public/placeholder.svg"}
