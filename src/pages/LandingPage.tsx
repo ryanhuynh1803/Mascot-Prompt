@@ -17,7 +17,7 @@ const LandingPage = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
             Trình Tạo Prompt Mascot
           </h1>
-          <Badge variant="secondary" className="text-sm font-semibold px-3 py-1">
+          <Badge variant="secondary" className="text-sm font-semibold px-3 py-1 rounded-md">
             v6.0
           </Badge>
         </div>
@@ -27,7 +27,7 @@ const LandingPage = () => {
         <Button 
           onClick={handleStart} 
           size="lg" 
-          className="mt-8 px-8 py-3 text-lg font-semibold transition-all duration-300"
+          className="mt-8 px-8 py-3 text-lg font-semibold transition-all duration-300 rounded-md"
         >
           Bắt đầu
         </Button>

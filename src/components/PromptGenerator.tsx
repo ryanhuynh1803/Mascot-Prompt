@@ -3,7 +3,7 @@ import { MascotPreview } from "./MascotPreview";
 import OptionsPanel from "./OptionsPanel";
 import { PromptPreview } from "./PromptPreview";
 import { SelectedOptions } from "./SelectedOptions";
-import { useMascotConfig } from "@/hooks/useMascotConfig"; // Fixed: Added 'from' keyword
+import { useMascotConfig } from "@/hooks/useMascotConfig";
 import { Badge } from "@/components/ui/badge";
 import { PromptOptions } from "@/types/mascot";
 
@@ -44,7 +44,7 @@ export function PromptGenerator() {
             <h1 className="text-3xl md:text-4xl font-bold text-foreground">
               Trình Tạo Prompt Mascot
             </h1>
-            <Badge variant="secondary" className="text-xs font-semibold">
+            <Badge variant="secondary" className="text-xs font-semibold rounded-md">
               v6.0
             </Badge>
           </div>
@@ -84,10 +84,10 @@ export function PromptGenerator() {
             <PromptPreview options={options} />
             
             {/* Enhanced Footer */}
-            <footer className="bg-card rounded-lg p-4 border">
+            <footer className="bg-card rounded-lg p-4 border rounded-lg">
               <div className="text-center text-xs text-muted-foreground space-y-2">
                 <div className="flex items-center justify-center gap-2">
-                  <Badge variant="outline" className="text-xs">
+                  <Badge variant="outline" className="text-xs rounded-md">
                     Phiên bản 6.0
                   </Badge>
                   <span>•</span>

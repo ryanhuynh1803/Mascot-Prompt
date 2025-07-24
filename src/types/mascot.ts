@@ -1,64 +1,58 @@
-export type BodyPart = 'head' | 'expression' | 'body' | 'accessories' | 'legs' | 'colors' | 'context' | 'view';
+export type BodyPart = 'character' | 'costume' | 'face' | 'materials' | 'environment' | 'context';
 
-export const bodyPartsOrder: BodyPart[] = ['head', 'expression', 'body', 'accessories', 'legs', 'colors', 'context', 'view'];
+export const bodyPartsOrder: BodyPart[] = ['character', 'costume', 'face', 'materials', 'environment', 'context'];
 
 export interface PromptOptions {
-  artStyle: string;
-  format: string;
-  characterType: string;
-  personalityTraits: string;
-  fieldOfUse: string;
-  material: string;
-  headShape: string;
-  hairStyle: string;
-  bodyProportion: string;
-  defaultPose: string;
-  actionGesture: string;
-  facialExpression: string;
-  eyes: string;
-  mouth: string;
-  accessories: string;
-  viewAngle: string;
-  legDesign: string;
-  // New color options
-  skinColor: string;
-  shirtColor: string;
-  pantsColor: string;
-  backgroundColor: string;
+  art_style: string;
+  age_gender_personality: string;
+  costume_type: string;
+  design_theme: string;
+  body_shape: string;
+  proportion_details: string;
+  pose_and_attitude: string;
+  costume_description: string;
+  accessory_detail: string;
+  animal_or_theme_inspiration: string;
+  hair_style: string;
+  face_features: string;
+  emotion_or_attitude: string;
+  material_1: string;
+  material_2: string;
+  material_3: string;
+  surface_feel: string;
+  lighting_style: string;
+  background_type: string;
+  application_context: string;
 }
 
 export const defaultOptions: PromptOptions = {
-  artStyle: "Chibi",
-  format: "2D Vector",
-  characterType: "Animal",
-  personalityTraits: "Friendly",
-  fieldOfUse: "Education",
-  material: "Fabric",
-  headShape: "Large round head, oversized in proportion to body",
-  hairStyle: "Spiky black hair with soft shine",
-  bodyProportion: "Chibi body, 1:2 head-to-body ratio, small torso, round limbs",
-  defaultPose: "Standing upright",
-  actionGesture: "Waving one hand and holding a small book in the other",
-  facialExpression: "Smiling gently, happy and engaged",
-  eyes: "Large round eyes with shiny pupils and highlight reflections",
-  mouth: "Small curved smiling mouth, friendly look",
-  accessories: "Big round glasses, brown leather crossbody bag",
-  viewAngle: "Front view",
-  legDesign: "Short legs with white-gray sneakers, rubber sole detail",
-  // Defaults for new colors
-  skinColor: "#FFDDC5",
-  shirtColor: "#4A4A4A",
-  pantsColor: "#88DAB3",
-  backgroundColor: "#F0F4F8",
+  art_style: "Chibi",
+  age_gender_personality: "young, friendly, curious",
+  costume_type: "simple jumpsuit",
+  design_theme: "modern tech",
+  body_shape: "round and soft",
+  proportion_details: "oversized head, small body",
+  pose_and_attitude: "standing, waving cheerfully",
+  costume_description: "minimalist, with a small logo",
+  accessory_detail: "a small backpack",
+  animal_or_theme_inspiration: "a playful fox",
+  hair_style: "short and spiky",
+  face_features: "large, expressive eyes and a wide smile",
+  emotion_or_attitude: "joyful and approachable",
+  material_1: "soft vinyl",
+  material_2: "matte plastic",
+  material_3: "smooth fabric",
+  surface_feel: "smooth and tactile",
+  lighting_style: "soft studio lighting",
+  background_type: "clean white background",
+  application_context: "educational mobile app",
 };
 
 export const bodyPartOptions = {
-  head: ['artStyle', 'format', 'characterType', 'headShape', 'hairStyle'],
-  expression: ['facialExpression', 'eyes', 'mouth'],
-  body: ['personalityTraits', 'material', 'bodyProportion', 'defaultPose', 'actionGesture'],
-  accessories: ['accessories'],
-  context: ['fieldOfUse'],
-  view: ['viewAngle'],
-  legs: ['legDesign'],
-  colors: ['skinColor', 'shirtColor', 'pantsColor', 'backgroundColor'],
+  character: ['art_style', 'age_gender_personality', 'body_shape', 'proportion_details', 'pose_and_attitude', 'design_theme'],
+  costume: ['costume_type', 'costume_description', 'accessory_detail', 'animal_or_theme_inspiration'],
+  face: ['hair_style', 'face_features', 'emotion_or_attitude'],
+  materials: ['material_1', 'material_2', 'material_3', 'surface_feel'],
+  environment: ['lighting_style', 'background_type'],
+  context: ['application_context'],
 };

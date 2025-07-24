@@ -39,28 +39,26 @@ export const SelectedOptions = ({ options }: SelectedOptionsProps) => {
   }, [selectedOptions]);
 
   const partLabels: Record<string, string> = {
-    head: 'Đầu',
-    expression: 'Biểu cảm',
-    body: 'Thân',
-    accessories: 'Phụ kiện',
-    context: 'Bối cảnh',
-    view: 'Góc nhìn',
-    legs: 'Chân',
-    colors: 'Màu sắc'
+    character: 'Nhân vật',
+    costume: 'Trang phục',
+    face: 'Khuôn mặt',
+    materials: 'Chất liệu',
+    environment: 'Môi trường',
+    context: 'Bối cảnh'
   };
 
   return (
-    <Card className="border-2 bg-card hover:border-primary transition-colors">
+    <Card className="border-2 bg-card hover:border-primary transition-colors rounded-lg">
       <CardHeader>
         <div className="flex items-center justify-between">
           <CardTitle className="flex items-center gap-2">
             Các lựa chọn của bạn
           </CardTitle>
           <div className="flex items-center gap-2">
-            <Badge variant={completionPercentage > 50 ? "default" : "secondary"} className="text-xs">
+            <Badge variant={completionPercentage > 50 ? "default" : "secondary"} className="text-xs rounded-md">
               {completionPercentage}% hoàn thành
             </Badge>
-            <Badge variant="outline" className="text-xs">
+            <Badge variant="outline" className="text-xs rounded-md">
               {selectedCount}/{totalOptions}
             </Badge>
           </div>
@@ -76,7 +74,7 @@ export const SelectedOptions = ({ options }: SelectedOptionsProps) => {
         <Collapsible open={isOpen} onOpenChange={setIsOpen}>
           <div className="flex items-center justify-center">
             <CollapsibleTrigger asChild>
-              <Button variant="ghost" size="sm" className="w-full hover:bg-muted/50 transition-colors">
+              <Button variant="ghost" size="sm" className="w-full justify-center hover:bg-muted/50 transition-colors rounded-md">
                 <span className="flex items-center gap-2">
                   {isOpen ? "Ẩn chi tiết" : `Hiển thị chi tiết (${selectedCount} lựa chọn)`}
                 </span>
@@ -93,7 +91,7 @@ export const SelectedOptions = ({ options }: SelectedOptionsProps) => {
                         <h4 className="font-medium text-sm text-foreground">
                           {partLabels[bodyPart] || bodyPart}
                         </h4>
-                        <Badge variant="secondary" className="text-xs">
+                        <Badge variant="secondary" className="text-xs rounded-md">
                           {partOptions.length}
                         </Badge>
                       </div>

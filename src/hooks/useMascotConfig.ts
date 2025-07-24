@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { BodyPart, PromptOptions, defaultOptions, bodyPartsOrder } from '@/types/mascot';
+import { BodyPart, PromptOptions, defaultOptions, bodyPartsOrder, bodyPartOptions } from '@/types/mascot';
 import { optionChoices } from '@/data/optionChoices';
 import { useToast } from '@/hooks/use-toast';
 
@@ -7,14 +7,9 @@ export const useMascotConfig = () => {
   const { toast } = useToast();
 
   // Luôn bắt đầu với trạng thái mặc định, bỏ qua localStorage
-  const [options, setOptions] = useState<Partial<PromptOptions>>({
-    skinColor: defaultOptions.skinColor,
-    shirtColor: defaultOptions.shirtColor,
-    pantsColor: defaultOptions.pantsColor,
-    backgroundColor: defaultOptions.backgroundColor,
-  });
+  const [options, setOptions] = useState<Partial<PromptOptions>>(defaultOptions);
 
-  const [selectedBodyPart, setSelectedBodyPart] = useState<BodyPart>('head');
+  const [selectedBodyPart, setSelectedBodyPart] = useState<BodyPart>('character');
 
   const updateOption = useCallback((key: keyof PromptOptions, value: string) => {
     setOptions(prev => ({
@@ -24,14 +19,8 @@ export const useMascotConfig = () => {
   }, []);
 
   const handleReset = useCallback(() => {
-    const defaultColors = {
-      skinColor: defaultOptions.skinColor,
-      shirtColor: defaultOptions.shirtColor,
-      pantsColor: defaultOptions.pantsColor,
-      backgroundColor: defaultOptions.backgroundColor,
-    };
-    setOptions(defaultColors);
-    setSelectedBodyPart('head');
+    setOptions(defaultOptions);
+    setSelectedBodyPart('character');
     toast({
       title: "Đã làm mới!",
       description: "Tất cả lựa chọn đã được trả về mặc định.",
@@ -49,12 +38,6 @@ export const useMascotConfig = () => {
         randomOptions[typedKey as keyof PromptOptions] = choices[randomIndex];
       }
     }
-
-    const randomColor = () => '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0').toUpperCase();
-    randomOptions.skinColor = randomColor();
-    randomOptions.shirtColor = randomColor();
-    randomOptions.pantsColor = randomColor();
-    randomOptions.backgroundColor = randomColor();
 
     setOptions(randomOptions);
     toast({

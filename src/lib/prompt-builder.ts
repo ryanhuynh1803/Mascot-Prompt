@@ -3,38 +3,15 @@ import { PromptOptions } from "@/types/mascot";
 export const buildPrompt = (options: Partial<PromptOptions>): string => {
   const get = (key: keyof PromptOptions) => options[key] || "none";
   
-  const colorDetails = `
-Skin Color: (${get('skinColor')})
-Shirt Color: (${get('shirtColor')})
-Pants Color: (${get('pantsColor')})
-`;
+  return `Create a 3D ${get('art_style')} character of a ${get('age_gender_personality')} wearing a ${get('costume_type')} in a ${get('design_theme')} style.
+The character has a ${get('body_shape')} with ${get('proportion_details')}, standing in a ${get('pose_and_attitude')}.
 
-  return `create a mascot character in a (${get('artStyle')}) art style and (${get('format')}) format.
+The costume features ${get('costume_description')}, including ${get('accessory_detail')}, inspired by a ${get('animal_or_theme_inspiration')}.
 
-Character Type: (${get('characterType')})
-Core Personality Traits: (${get('personalityTraits')})
-Field of Use: (${get('fieldOfUse')})
+The face includes ${get('hair_style')}, ${get('face_features')}, and an expression that feels ${get('emotion_or_attitude')}.
 
-Perceived Material/Texture: (${get('material')})
-Head Shape & Size: (${get('headShape')})
-Hair Style & Color: (${get('hairStyle')})
-Body Proportion & Shape: (${get('bodyProportion')})
-Arm Design: (Simple cartoon arms, soft, with realistic hands)
-Leg/Foot Design: (${get('legDesign')})
-Overall Proportion: (1:2 – head twice as big as body, cute and toy-like)
+Use materials such as ${get('material_1')}, ${get('material_2')}, and ${get('material_3')} to achieve a ${get('surface_feel')}.
+Apply ${get('lighting_style')} and render on a ${get('background_type')} to complete the look.
 
-Default Pose: (${get('defaultPose')})
-View Angle: (${get('viewAngle')})
-Action or Gesture: (${get('actionGesture')})
-Facial Expression: (${get('facialExpression')})
-Eyes: (${get('eyes')})
-Mouth: (${get('mouth')})
-
-Accessories: (${get('accessories')})
-Color Details: ${colorDetails.trim()}
-Logo Placement: (Small brand badge on shirt hem)
-Design Language/Visual Culture: (Modern Asian + Toy-like aesthetic, inspired by Japanese vinyl mascots)
-Potential Application Context: (Tech website, mobile app onboarding, printed branding, event standees)
-
-Use a background with the color (${get('backgroundColor')}). The mascot should appear friendly, modern, and visually engaging for educational branding and digital use.`;
+This character is designed for ${get('application_context')}.`;
 };

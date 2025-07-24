@@ -63,7 +63,7 @@ export const ColorPicker = ({ id, label, value, onValueChange, className }: Colo
         {label}
       </Label>
       <div className="flex items-center gap-2">
-        <div className="relative h-10 w-10 rounded-md border overflow-hidden shrink-0 shadow-sm">
+        <div className="relative h-10 w-10 rounded-lg border overflow-hidden shrink-0 shadow-sm">
           <input
             type="color"
             value={value || '#FFFFFF'}
@@ -84,7 +84,7 @@ export const ColorPicker = ({ id, label, value, onValueChange, className }: Colo
           onBlur={handleInputBlur}
           onKeyDown={handleKeyDown}
           className={cn(
-            "flex-1 font-mono",
+            "flex-1 font-mono rounded-md", // Added rounded-md here
             !isValid && "border-destructive focus:border-destructive"
           )}
           placeholder="#FFFFFF"

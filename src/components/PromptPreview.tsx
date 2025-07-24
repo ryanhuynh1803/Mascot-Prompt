@@ -40,7 +40,7 @@ export const PromptPreview = memo(({ options }: PromptPreviewProps) => {
   }, [generatedPrompt, toast]);
 
   return (
-    <Card className="border-2 bg-card hover:border-primary transition-colors">
+    <Card className="border-2 bg-card hover:border-primary transition-colors rounded-lg">
       <Collapsible open={isOpen} onOpenChange={setIsOpen}>
         <CardHeader>
           <div className="flex items-center justify-between">
@@ -48,13 +48,13 @@ export const PromptPreview = memo(({ options }: PromptPreviewProps) => {
               Xem Trước Prompt
             </CardTitle>
             <div className="flex items-center gap-2">
-              <Badge variant="secondary" className="text-xs">
+              <Badge variant="secondary" className="text-xs rounded-md">
                 {wordCount} từ
               </Badge>
               <Button 
                 onClick={copyToClipboard}
                 size="sm"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 transition-colors rounded-md"
                 disabled={copied}
               >
                 {copied ? "Đã sao chép" : "Sao chép"}
@@ -71,7 +71,7 @@ export const PromptPreview = memo(({ options }: PromptPreviewProps) => {
         </CardHeader>
         <CardContent>
           <CollapsibleTrigger asChild>
-            <Button variant="ghost" className="w-full justify-center hover:bg-muted/50 transition-colors">
+            <Button variant="ghost" className="w-full justify-center hover:bg-muted/50 transition-colors rounded-md">
               <span className="flex items-center gap-2">
                 {isOpen ? "Ẩn" : "Hiển thị"} Preview
               </span>
@@ -85,7 +85,7 @@ export const PromptPreview = memo(({ options }: PromptPreviewProps) => {
             </ScrollArea>
             <div className="mt-3 flex items-center justify-between text-xs text-muted-foreground">
               <span>Prompt được tạo tự động từ các lựa chọn của bạn</span>
-              <Badge variant="outline" className="text-xs">
+              <Badge variant="outline" className="text-xs rounded-md">
                 Cập nhật real-time
               </Badge>
             </div>

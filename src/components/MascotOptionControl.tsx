@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 import { PromptOptions, bodyPartOptions } from '@/types/mascot';
 import { optionChoices } from '@/data/optionChoices';
 import { translations, optionKeyTranslations } from '@/data/translations';
-import { ColorPicker } from './ColorPicker';
+// import { ColorPicker } from './ColorPicker'; // ColorPicker is no longer used for prompt options
 
 interface MascotOptionControlProps {
   optionKey: keyof PromptOptions;
@@ -12,22 +12,22 @@ interface MascotOptionControlProps {
   onOptionChange: (key: keyof PromptOptions, value: string) => void;
 }
 
-const colorOptionKeys = bodyPartOptions.colors;
+// const colorOptionKeys = bodyPartOptions.colors; // No longer relevant
 
 const MascotOptionControl = ({ optionKey, value, onOptionChange }: MascotOptionControlProps) => {
-  const isColorOption = colorOptionKeys.includes(optionKey);
+  // const isColorOption = colorOptionKeys.includes(optionKey); // No longer relevant
   const label = optionKeyTranslations[optionKey] || optionKey;
 
-  if (isColorOption) {
-    return (
-      <ColorPicker
-        id={optionKey}
-        label={label}
-        value={value || ''}
-        onValueChange={(newValue) => onOptionChange(optionKey, newValue)}
-      />
-    );
-  }
+  // if (isColorOption) { // No longer relevant
+  //   return (
+  //     <ColorPicker
+  //       id={optionKey}
+  //       label={label}
+  //       value={value || ''}
+  //       onValueChange={(newValue) => onOptionChange(optionKey, newValue)}
+  //     />
+  //   );
+  // }
 
   const choices = optionChoices[optionKey as keyof typeof optionChoices] || [];
   const choiceTranslations = translations[optionKey as keyof typeof translations] as Record<string, string> | undefined;

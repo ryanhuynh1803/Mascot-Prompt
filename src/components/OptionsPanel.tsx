@@ -21,14 +21,12 @@ interface OptionsPanelProps {
 }
 
 const partLabels: Record<BodyPart, string> = {
-  head: 'Đầu',
-  expression: 'Biểu cảm',
-  body: 'Thân',
-  accessories: 'Phụ kiện',
-  context: 'Bối cảnh',
-  view: 'Góc nhìn',
-  legs: 'Chân',
-  colors: 'Màu sắc'
+  character: 'Nhân vật',
+  costume: 'Trang phục',
+  face: 'Khuôn mặt',
+  materials: 'Chất liệu',
+  environment: 'Môi trường',
+  context: 'Bối cảnh'
 };
 
 const OptionsPanelComponent = ({ 
@@ -50,7 +48,7 @@ const OptionsPanelComponent = ({
   const totalCount = optionsToShow.length;
 
   return (
-    <Card className="flex flex-col h-full border-2 bg-card hover:border-primary transition-colors">
+    <Card className="flex flex-col h-full border-2 bg-card hover:border-primary transition-colors rounded-lg">
       <CardHeader className="pb-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -66,26 +64,26 @@ const OptionsPanelComponent = ({
           <div className="flex items-center gap-1">
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant="outline" size="sm" onClick={onPrevious} aria-label="Phần trước">
+                <Button variant="outline" size="sm" onClick={onPrevious} aria-label="Phần trước" className="rounded-md">
                   Trước
                 </Button>
               </TooltipTrigger>
-              <TooltipContent>Phần trước</TooltipContent>
+              <TooltipContent className="rounded-md">Phần trước</TooltipContent>
             </Tooltip>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant="outline" size="sm" onClick={onNext} aria-label="Phần tiếp theo">
+                <Button variant="outline" size="sm" onClick={onNext} aria-label="Phần tiếp theo" className="rounded-md">
                   Tiếp
                 </Button>
               </TooltipTrigger>
-              <TooltipContent>Phần tiếp theo</TooltipContent>
+              <TooltipContent className="rounded-md">Phần tiếp theo</TooltipContent>
             </Tooltip>
           </div>
         </div>
         
         {/* Progress Bar */}
         <div className="space-y-2 mt-4">
-          <Progress value={progressPercentage} className="h-2" />
+          <Progress value={progressPercentage} className="h-2 rounded-full" />
           <div className="flex justify-between text-xs text-muted-foreground">
             <span>Tiến độ</span>
             <span>{currentPage}/{totalPages}</span>
@@ -118,21 +116,21 @@ const OptionsPanelComponent = ({
           <div className="flex items-center gap-2">
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button size="sm" variant="outline" onClick={onRandom} aria-label="Tùy chọn ngẫu nhiên">
+                <Button size="sm" variant="outline" onClick={onRandom} aria-label="Tùy chọn ngẫu nhiên" className="rounded-md">
                   Ngẫu nhiên
                 </Button>
               </TooltipTrigger>
-              <TooltipContent>
+              <TooltipContent className="rounded-md">
                 <p>Tạo các lựa chọn ngẫu nhiên cho tất cả tùy chọn</p>
               </TooltipContent>
             </Tooltip>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button size="sm" variant="secondary" onClick={onReset} aria-label="Làm mới lựa chọn">
+                <Button size="sm" variant="secondary" onClick={onReset} aria-label="Làm mới lựa chọn" className="rounded-md">
                   Làm mới
                 </Button>
               </TooltipTrigger>
-              <TooltipContent>
+              <TooltipContent className="rounded-md">
                 <p>Đặt lại tất cả lựa chọn về mặc định</p>
               </TooltipContent>
             </Tooltip>

@@ -23,7 +23,7 @@
     --border: 0 0% 85%;      /* Light Gray border */
     --input: 0 0% 90%;       /* Light Gray input */
     --ring: 0 0% 15%;        /* Dark Gray ring */
-    --radius: 0.5rem;        /* Slightly smaller radius */
+    --radius: 0.75rem;        /* Increased radius for more rounded corners */
   }
 
   .dark {
@@ -46,7 +46,7 @@
     --border: 0 0% 25%;      /* Dark Gray border */
     --input: 0 0% 20%;       /* Medium Dark Gray input */
     --ring: 0 0% 90%;        /* Light Gray ring */
-    --radius: 0.5rem;
+    --radius: 0.75rem;
   }
 }
 
