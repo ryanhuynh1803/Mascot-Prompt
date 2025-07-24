@@ -17,7 +17,7 @@ export function PromptGenerator() {
     selectedBodyPart,
     updateOption,
     handleReset,
-    handleRandom,
+    handleRandom, // Changed from onRandom to handleRandom
     handleBodyPartSelect,
     handleNextPart,
     handlePreviousPart,
@@ -48,9 +48,9 @@ export function PromptGenerator() {
         </header>
 
         {/* Main Content Grid */}
-        <main className="space-y-4"> {/* Changed space-y-6 to space-y-4 to reduce vertical gap */}
+        <main className="space-y-4">
           {/* Preset Selector Section (moved to top) */}
-          <section>
+          <section className="mt-0">
             <PresetSelector onApplyPreset={handleApplyPreset} />
           </section>
 
@@ -64,7 +64,7 @@ export function PromptGenerator() {
                 onNext={handleNextPart}
                 onPrevious={handlePreviousPart}
                 onReset={handleReset}
-                onRandom={handleRandom}
+                onRandom={handleRandom} // Passed handleRandom to OptionsPanel
                 currentPage={currentPage}
                 totalPages={totalPages}
               />
