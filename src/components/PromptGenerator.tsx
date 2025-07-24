@@ -17,7 +17,7 @@ export function PromptGenerator() {
     selectedBodyPart,
     updateOption,
     handleReset,
-    handleRandom, // Changed from onRandom to handleRandom
+    handleRandom,
     handleBodyPartSelect,
     handleNextPart,
     handlePreviousPart,
@@ -40,7 +40,7 @@ export function PromptGenerator() {
   const today = new Date().toLocaleDateString('vi-VN');
 
   return (
-    <div className="min-h-screen bg-background text-foreground p-4 md:p-6">
+    <div className="min-h-screen bg-background text-foreground px-4 pt-[5px] pb-4 md:px-6 md:pt-[5px] md:pb-6"> {/* Adjusted padding here */}
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <header className="flex justify-end mb-4">
@@ -64,7 +64,7 @@ export function PromptGenerator() {
                 onNext={handleNextPart}
                 onPrevious={handlePreviousPart}
                 onReset={handleReset}
-                onRandom={handleRandom} // Passed handleRandom to OptionsPanel
+                onRandom={handleRandom}
                 currentPage={currentPage}
                 totalPages={totalPages}
               />
