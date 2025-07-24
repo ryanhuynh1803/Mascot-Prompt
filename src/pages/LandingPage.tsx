@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -6,24 +6,44 @@ import { LandingPagePresetCarousel } from '@/components/LandingPagePresetCarouse
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    // Add the custom cursor class to the body when the component mounts
-    document.body.classList.add('custom-cursor-landing');
+    // Ẩn con trỏ mặc định
+    document.body.style.cursor = 'none';
 
-    // Remove the custom cursor class from the body when the component unmounts
-    return () => {
-      document.body.classList.remove('custom-cursor-landing');
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
     };
-  }, []); // Empty dependency array ensures this runs once on mount and cleanup on unmount
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    // Dọn dẹp: khôi phục con trỏ mặc định và xóa trình nghe sự kiện
+    return () => {
+      document.body.style.cursor = 'default';
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
 
   const handleStart = () => {
     navigate('/generator');
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-background text-foreground p-4 md:p-6 text-center animate-fade-in">
-      <div className="max-w-3xl mx-auto space-y-6">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-background text-foreground p-4 md:p-6 text-center animate-fade-in relative overflow-hidden">
+      {/* Phần tử đóm sáng */}
+      <div
+        className="fixed w-8 h-8 rounded-full pointer-events-none z-[9999] transition-transform duration-75 ease-out"
+        style={{
+          left: mousePosition.x,
+          top: mousePosition.y,
+          transform: 'translate(-50%, -50%)',
+          background: 'radial-gradient(circle at center, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 70%)',
+          boxShadow: '0 0 15px 5px rgba(255, 255, 255, 0.4)' // Thêm hiệu ứng phát sáng nhẹ
+        }}
+      />
+
+      <div className="max-w-3xl mx-auto space-y-6 z-10"> {/* Đảm bảo nội dung nằm trên đóm sáng */}
         <div className="flex items-center justify-center gap-3 mb-4">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
             Trình Tạo Prompt Mascot
@@ -44,7 +64,7 @@ const LandingPage = () => {
         </Button>
       </div>
 
-      <div className="mt-12 w-full"> 
+      <div className="mt-12 w-full z-10"> 
         <LandingPagePresetCarousel />
       </div>
     </div>

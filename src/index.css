@@ -38,8 +38,5 @@
     @apply bg-background text-foreground;
   }
 
-  /* Custom cursor for landing page only */
-  body.custom-cursor-landing {
-    cursor: url('/custom-cursor.png') auto !important; /* Added !important */
-  }
+  /* Đã xóa quy tắc custom-cursor-landing */
 }
