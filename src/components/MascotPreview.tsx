@@ -55,7 +55,7 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect }: Masco
   }, [selectedBodyPart]);
 
   return (
-    <Card className="shadow-lg border-2 hover:border-primary/20 transition-colors">
+    <Card className="shadow-lg border-2 bg-card/50 backdrop-blur-sm hover:border-primary/20 transition-colors">
       <CardHeader>
         <div className="flex items-center justify-between">
           <CardTitle className="flex items-center gap-2">
@@ -72,7 +72,7 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect }: Masco
       <CardContent className="flex flex-col items-center space-y-6">
         {/* Interactive Mascot Image */}
         <div className="relative group w-full max-w-[300px]">
-          <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          {/* Removed the gradient blur hover effect */}
           <div className="relative">
             <img 
               src="https://i.pinimg.com/1200x/ce/31/a8/ce31a87217b46a9981ffa7c2d4dd9c50.jpg" 
@@ -86,7 +86,14 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect }: Masco
               {/* Head Area */}
               <button
                 onClick={() => onBodyPartSelect('head')}
-                className={`${getButtonClasses('head')} top-[5%] left-1/2 transform -translate-x-1/2 w-[55%] h-[40%] rounded-full`}
+                className={`
+                  absolute top-[5%] left-1/2 transform -translate-x-1/2 w-[55%] h-[40%] rounded-full
+                  transition-all duration-300 border-2 focus:outline-none focus:ring-2 focus:ring-foreground/50 backdrop-blur-sm
+                  ${selectedBodyPart === 'head' 
+                    ? 'bg-foreground/10 border-foreground shadow-lg ring-2 ring-foreground/30' 
+                    : 'bg-background/60 hover:bg-foreground/5 border-muted-foreground/30 hover:border-foreground/20'
+                  }
+                `}
                 title="Click để chỉnh sửa phần đầu"
                 aria-label="Chỉnh sửa phần đầu"
               >
@@ -102,7 +109,14 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect }: Masco
               {/* Body Area */}
               <button
                 onClick={() => onBodyPartSelect('body')}
-                className={`${getButtonClasses('body')} top-[45%] left-1/2 transform -translate-x-1/2 w-[70%] h-[35%]`}
+                className={`
+                  absolute top-[45%] left-1/2 transform -translate-x-1/2 w-[70%] h-[35%]
+                  transition-all duration-300 border-2 focus:outline-none focus:ring-2 focus:ring-foreground/50 backdrop-blur-sm
+                  ${selectedBodyPart === 'body' 
+                    ? 'bg-foreground/10 border-foreground shadow-lg ring-2 ring-foreground/30' 
+                    : 'bg-background/60 hover:bg-foreground/5 border-muted-foreground/30 hover:border-foreground/20'
+                  }
+                `}
                 title="Click để chỉnh sửa phần thân"
                 aria-label="Chỉnh sửa phần thân"
               >
@@ -118,7 +132,14 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect }: Masco
               {/* Legs Area */}
               <button
                 onClick={() => onBodyPartSelect('legs')}
-                className={`${getButtonClasses('legs')} bottom-[5%] left-1/2 transform -translate-x-1/2 w-[50%] h-[15%]`}
+                className={`
+                  absolute bottom-[5%] left-1/2 transform -translate-x-1/2 w-[50%] h-[15%]
+                  transition-all duration-300 border-2 focus:outline-none focus:ring-2 focus:ring-foreground/50 backdrop-blur-sm
+                  ${selectedBodyPart === 'legs' 
+                    ? 'bg-foreground/10 border-foreground shadow-lg ring-2 ring-foreground/30' 
+                    : 'bg-background/60 hover:bg-foreground/5 border-muted-foreground/30 hover:border-foreground/20'
+                  }
+                `}
                 title="Click để chỉnh sửa phần chân"
                 aria-label="Chỉnh sửa phần chân"
               >
@@ -141,7 +162,7 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect }: Masco
           className="w-full max-w-[300px]"
         >
           <ScrollArea className="w-full whitespace-nowrap" ref={scrollAreaRef}>
-            <TabsList className="w-max bg-muted/50 p-1" ref={tabsListRef}>
+            <TabsList className="w-max bg-muted/50 p-1">
               {bodyParts.map(({ part, label }) => (
                 <TabsTrigger 
                   key={part} 

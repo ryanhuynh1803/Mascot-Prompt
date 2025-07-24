@@ -50,7 +50,7 @@ export const SelectedOptions = ({ options }: SelectedOptionsProps) => {
   };
 
   return (
-    <Card className="shadow-lg border-2 hover:border-primary/20 transition-colors">
+    <Card className="shadow-lg border-2 bg-card/50 backdrop-blur-sm hover:border-primary/20 transition-colors">
       <CardHeader>
         <div className="flex items-center justify-between">
           <CardTitle className="flex items-center gap-2">

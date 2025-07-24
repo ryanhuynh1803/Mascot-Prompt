@@ -36,7 +36,7 @@ export function PromptGenerator() {
   const today = new Date().toLocaleDateString('vi-VN');
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20 text-foreground p-4 md:p-6">
+    <div className="min-h-screen bg-background text-foreground p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <header className="text-center mb-8 animate-fade-in">

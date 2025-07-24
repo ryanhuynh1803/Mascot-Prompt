@@ -50,7 +50,7 @@ const OptionsPanelComponent = ({
   const totalCount = optionsToShow.length;
 
   return (
-    <Card className="flex flex-col h-full shadow-lg border-2 hover:border-primary/20 transition-colors">
+    <Card className="flex flex-col h-full shadow-lg border-2 bg-card/50 backdrop-blur-sm hover:border-primary/20 transition-colors">
       <CardHeader className="pb-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
