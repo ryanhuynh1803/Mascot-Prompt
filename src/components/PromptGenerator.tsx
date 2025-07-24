@@ -7,7 +7,6 @@ import { ExportOptions } from "./ExportOptions";
 import { QuickPresets } from "./QuickPresets";
 import { useMascotConfig } from "@/hooks/useMascotConfig";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles } from "lucide-react";
 import { PromptOptions } from "@/types/mascot";
 
 export function PromptGenerator() {
@@ -44,7 +43,6 @@ export function PromptGenerator() {
         {/* Header Section */}
         <header className="text-center mb-8 animate-fade-in">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <Sparkles className="w-8 h-8 text-primary animate-pulse" />
             <h1 className="text-3xl md:text-4xl font-bold text-foreground">
               Trình Tạo Prompt Mascot
             </h1>
@@ -108,7 +106,6 @@ export function PromptGenerator() {
                     className="text-primary hover:underline font-semibold transition-colors inline-flex items-center gap-1"
                   >
                     Ryanocode
-                    <Sparkles className="w-3 h-3" />
                   </a>
                 </p>
                 <div className="flex items-center justify-center gap-4 text-xs">

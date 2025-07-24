@@ -3,10 +3,10 @@ import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/componen
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { BodyPart, PromptOptions, bodyPartOptions } from '@/types/mascot';
 import { Button } from './ui/button';
-import { ChevronLeft, ChevronRight, RotateCcw, Dices, Settings } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 import { Progress } from './ui/progress';
 import MascotOptionControl from './MascotOptionControl';
+import { bodyPartsOrder } from '@/types/mascot';
 
 interface OptionsPanelProps {
   selectedBodyPart: BodyPart;
@@ -29,17 +29,6 @@ const partLabels: Record<BodyPart, string> = {
   view: 'Góc nhìn',
   legs: 'Chân',
   colors: 'Màu sắc'
-};
-
-const partIcons: Record<BodyPart, React.ReactNode> = {
-  head: '👤',
-  expression: '😊',
-  body: '👕',
-  accessories: '🎒',
-  context: '🏢',
-  view: '📐',
-  legs: '👟',
-  colors: '🎨'
 };
 
 const OptionsPanelComponent = ({ 
@@ -65,10 +54,8 @@ const OptionsPanelComponent = ({
       <CardHeader className="pb-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="text-2xl">{partIcons[selectedBodyPart]}</div>
             <div>
               <CardTitle className="flex items-center gap-2">
-                <Settings className="w-4 h-4" />
                 {partLabels[selectedBodyPart]}
               </CardTitle>
               <p className="text-xs text-muted-foreground mt-1">
@@ -79,16 +66,16 @@ const OptionsPanelComponent = ({
           <div className="flex items-center gap-1">
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant="outline" size="icon" onClick={onPrevious} aria-label="Phần trước">
-                  <ChevronLeft className="h-4 w-4" />
+                <Button variant="outline" size="sm" onClick={onPrevious} aria-label="Phần trước">
+                  Trước
                 </Button>
               </TooltipTrigger>
               <TooltipContent>Phần trước</TooltipContent>
             </Tooltip>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant="outline" size="icon" onClick={onNext} aria-label="Phần tiếp theo">
-                  <ChevronRight className="h-4 w-4" />
+                <Button variant="outline" size="sm" onClick={onNext} aria-label="Phần tiếp theo">
+                  Tiếp
                 </Button>
               </TooltipTrigger>
               <TooltipContent>Phần tiếp theo</TooltipContent>
@@ -97,7 +84,7 @@ const OptionsPanelComponent = ({
         </div>
         
         {/* Progress Bar */}
-        <div className="space-y-2">
+        <div className="space-y-2 mt-4">
           <Progress value={progressPercentage} className="h-2" />
           <div className="flex justify-between text-xs text-muted-foreground">
             <span>Tiến độ</span>
@@ -132,7 +119,6 @@ const OptionsPanelComponent = ({
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button size="sm" variant="outline" onClick={onRandom} aria-label="Tùy chọn ngẫu nhiên">
-                  <Dices className="h-4 w-4 mr-2" />
                   Ngẫu nhiên
                 </Button>
               </TooltipTrigger>
@@ -143,7 +129,6 @@ const OptionsPanelComponent = ({
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button size="sm" variant="secondary" onClick={onReset} aria-label="Làm mới lựa chọn">
-                  <RotateCcw className="h-4 w-4 mr-2" />
                   Làm mới
                 </Button>
               </TooltipTrigger>

@@ -2,7 +2,6 @@ import { memo, useCallback, useState, useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Copy, ChevronsUpDown, FileText, CheckCircle } from "lucide-react";
 import { PromptOptions } from "@/types/mascot";
 import { useToast } from "@/components/ui/use-toast";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
@@ -46,7 +45,6 @@ export const PromptPreview = memo(({ options }: PromptPreviewProps) => {
         <CardHeader>
           <div className="flex items-center justify-between">
             <CardTitle className="flex items-center gap-2">
-              <FileText className="w-5 h-5 text-primary" />
               Xem Trước Prompt
             </CardTitle>
             <div className="flex items-center gap-2">
@@ -59,17 +57,7 @@ export const PromptPreview = memo(({ options }: PromptPreviewProps) => {
                 className="bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
                 disabled={copied}
               >
-                {copied ? (
-                  <>
-                    <CheckCircle className="w-4 h-4 mr-2" />
-                    Đã sao chép
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-4 h-4 mr-2" />
-                    Sao chép
-                  </>
-                )}
+                {copied ? "Đã sao chép" : "Sao chép"}
               </Button>
             </div>
           </div>
@@ -86,7 +74,6 @@ export const PromptPreview = memo(({ options }: PromptPreviewProps) => {
             <Button variant="ghost" className="w-full justify-center hover:bg-muted/50 transition-colors">
               <span className="flex items-center gap-2">
                 {isOpen ? "Ẩn" : "Hiển thị"} Preview
-                <ChevronsUpDown className="h-4 w-4" />
               </span>
             </Button>
           </CollapsibleTrigger>

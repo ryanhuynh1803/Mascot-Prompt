@@ -2,7 +2,6 @@ import { memo, useRef, useEffect, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import { MousePointer2, Eye, Palette } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { BodyPart } from "@/types/mascot";
 
@@ -11,15 +10,15 @@ interface MascotPreviewProps {
   onBodyPartSelect: (part: BodyPart) => void;
 }
 
-const bodyParts: { part: BodyPart; label: string; icon: string }[] = [
-  { part: 'head', label: 'Đầu', icon: '👤' },
-  { part: 'expression', label: 'Biểu cảm', icon: '😊' },
-  { part: 'body', label: 'Thân', icon: '👕' },
-  { part: 'accessories', label: 'Phụ kiện', icon: '🎒' },
-  { part: 'legs', label: 'Chân', icon: '👟' },
-  { part: 'colors', label: 'Màu sắc', icon: '🎨' },
-  { part: 'context', label: 'Bối cảnh', icon: '🏢' },
-  { part: 'view', label: 'Góc nhìn', icon: '📐' }
+const bodyParts: { part: BodyPart; label: string }[] = [
+  { part: 'head', label: 'Đầu' },
+  { part: 'expression', label: 'Biểu cảm' },
+  { part: 'body', label: 'Thân' },
+  { part: 'accessories', label: 'Phụ kiện' },
+  { part: 'legs', label: 'Chân' },
+  { part: 'colors', label: 'Màu sắc' },
+  { part: 'context', label: 'Bối cảnh' },
+  { part: 'view', label: 'Góc nhìn' }
 ];
 
 export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect }: MascotPreviewProps) => {
@@ -60,11 +59,9 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect }: Masco
       <CardHeader>
         <div className="flex items-center justify-between">
           <CardTitle className="flex items-center gap-2">
-            <Eye className="w-5 h-5 text-primary" />
             Xem Trước Mascot
           </CardTitle>
           <Badge variant="secondary" className="flex items-center gap-1">
-            <Palette className="w-3 h-3" />
             Tương tác
           </Badge>
         </div>
@@ -96,7 +93,7 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect }: Masco
                 {selectedBodyPart === 'head' && (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <Badge variant="default" className="text-xs font-bold">
-                      👤 ĐẦU
+                      ĐẦU
                     </Badge>
                   </div>
                 )}
@@ -112,7 +109,7 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect }: Masco
                 {selectedBodyPart === 'body' && (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <Badge variant="default" className="text-xs font-bold">
-                      👕 THÂN
+                      THÂN
                     </Badge>
                   </div>
                 )}
@@ -128,7 +125,7 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect }: Masco
                 {selectedBodyPart === 'legs' && (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <Badge variant="default" className="text-xs font-bold">
-                      👟 CHÂN
+                      CHÂN
                     </Badge>
                   </div>
                 )}
@@ -145,13 +142,12 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect }: Masco
         >
           <ScrollArea className="w-full whitespace-nowrap" ref={scrollAreaRef}>
             <TabsList className="w-max bg-muted/50 p-1" ref={tabsListRef}>
-              {bodyParts.map(({ part, label, icon }) => (
+              {bodyParts.map(({ part, label }) => (
                 <TabsTrigger 
                   key={part} 
                   value={part} 
                   className="px-3 py-2 transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
                 >
-                  <span className="mr-1">{icon}</span>
                   {label}
                 </TabsTrigger>
               ))}
@@ -163,7 +159,7 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect }: Masco
         {/* Current Selection Indicator */}
         <div className="text-center">
           <Badge variant="outline" className="text-sm">
-            Đang chỉnh sửa: {bodyParts.find(bp => bp.part === selectedBodyPart)?.icon} {bodyParts.find(bp => bp.part === selectedBodyPart)?.label}
+            Đang chỉnh sửa: {bodyParts.find(bp => bp.part === selectedBodyPart)?.label}
           </Badge>
         </div>
       </CardContent>

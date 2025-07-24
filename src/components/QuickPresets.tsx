@@ -2,7 +2,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Zap, Sparkles } from "lucide-react";
 import { PromptOptions } from "@/types/mascot";
 import { useToast } from "@/hooks/use-toast";
 
@@ -113,7 +112,6 @@ export const QuickPresets = ({ onApplyPreset }: QuickPresetsProps) => {
     <Card className="shadow-lg border-2 hover:border-primary/20 transition-colors">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <Zap className="w-5 h-5 text-primary" />
           Preset Nhanh
         </CardTitle>
         <p className="text-sm text-muted-foreground">
@@ -139,7 +137,6 @@ export const QuickPresets = ({ onApplyPreset }: QuickPresetsProps) => {
                     </div>
                   </div>
                   <Badge variant="secondary" className="text-xs">
-                    <Sparkles className="w-3 h-3 mr-1" />
                     Preset
                   </Badge>
                 </div>

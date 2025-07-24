@@ -6,7 +6,6 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Badge } from "@/components/ui/badge";
 import { PromptOptions, bodyPartOptions } from "@/types/mascot";
 import { optionKeyTranslations, translations } from "@/data/translations";
-import { ListChecks, ChevronsUpDown, CheckCircle2, Circle } from "lucide-react";
 
 interface SelectedOptionsProps {
   options: Partial<PromptOptions>;
@@ -40,14 +39,14 @@ export const SelectedOptions = ({ options }: SelectedOptionsProps) => {
   }, [selectedOptions]);
 
   const partLabels: Record<string, string> = {
-    head: '👤 Đầu',
-    expression: '😊 Biểu cảm',
-    body: '👕 Thân',
-    accessories: '🎒 Phụ kiện',
-    context: '🏢 Bối cảnh',
-    view: '📐 Góc nhìn',
-    legs: '👟 Chân',
-    colors: '🎨 Màu sắc'
+    head: 'Đầu',
+    expression: 'Biểu cảm',
+    body: 'Thân',
+    accessories: 'Phụ kiện',
+    context: 'Bối cảnh',
+    view: 'Góc nhìn',
+    legs: 'Chân',
+    colors: 'Màu sắc'
   };
 
   return (
@@ -55,7 +54,6 @@ export const SelectedOptions = ({ options }: SelectedOptionsProps) => {
       <CardHeader>
         <div className="flex items-center justify-between">
           <CardTitle className="flex items-center gap-2">
-            <ListChecks className="w-5 h-5 text-primary" />
             Các lựa chọn của bạn
           </CardTitle>
           <div className="flex items-center gap-2">
@@ -81,7 +79,6 @@ export const SelectedOptions = ({ options }: SelectedOptionsProps) => {
               <Button variant="ghost" size="sm" className="w-full hover:bg-muted/50 transition-colors">
                 <span className="flex items-center gap-2">
                   {isOpen ? "Ẩn chi tiết" : `Hiển thị chi tiết (${selectedCount} lựa chọn)`}
-                  <ChevronsUpDown className="h-4 w-4" />
                 </span>
               </Button>
             </CollapsibleTrigger>
@@ -108,7 +105,6 @@ export const SelectedOptions = ({ options }: SelectedOptionsProps) => {
                           
                           return (
                             <div key={key} className="flex items-start gap-3 py-1">
-                              <CheckCircle2 className="w-3 h-3 text-green-600 mt-0.5 flex-shrink-0" />
                               <div className="flex-1 min-w-0">
                                 <div className="text-xs font-medium text-muted-foreground">
                                   {translatedKey}
@@ -127,7 +123,6 @@ export const SelectedOptions = ({ options }: SelectedOptionsProps) => {
               </ScrollArea>
             ) : (
               <div className="text-center py-8 space-y-3">
-                <Circle className="w-12 h-12 text-muted-foreground/50 mx-auto" />
                 <div>
                   <p className="text-sm text-muted-foreground font-medium">
                     Chưa có lựa chọn nào được thực hiện

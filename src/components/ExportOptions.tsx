@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Download, FileText, Image, Share2, Copy } from "lucide-react";
 import { PromptOptions } from "@/types/mascot";
 import { buildPrompt } from "@/lib/prompt-builder";
 import { useToast } from "@/hooks/use-toast";
@@ -125,7 +124,6 @@ export const ExportOptions = ({ options }: ExportOptionsProps) => {
     <Card className="shadow-lg border-2 hover:border-primary/20 transition-colors">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <Download className="w-5 h-5 text-primary" />
           Xuất & Chia sẻ
         </CardTitle>
         <p className="text-sm text-muted-foreground">
@@ -140,7 +138,6 @@ export const ExportOptions = ({ options }: ExportOptionsProps) => {
             variant="outline"
             className="flex items-center gap-2"
           >
-            <FileText className="w-4 h-4" />
             Text File
           </Button>
           
@@ -150,7 +147,6 @@ export const ExportOptions = ({ options }: ExportOptionsProps) => {
             variant="outline"
             className="flex items-center gap-2"
           >
-            <Image className="w-4 h-4" />
             JSON Config
           </Button>
         </div>
@@ -163,7 +159,6 @@ export const ExportOptions = ({ options }: ExportOptionsProps) => {
             variant="secondary"
             className="flex items-center gap-2"
           >
-            <Share2 className="w-4 h-4" />
             Chia sẻ
           </Button>
           
@@ -172,7 +167,6 @@ export const ExportOptions = ({ options }: ExportOptionsProps) => {
             variant="secondary"
             className="flex items-center gap-2"
           >
-            <Copy className="w-4 h-4" />
             Sao chép
           </Button>
         </div>
