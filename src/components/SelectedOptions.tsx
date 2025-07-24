@@ -48,7 +48,7 @@ export const SelectedOptions = ({ options }: SelectedOptionsProps) => {
   };
 
   return (
-    <Card className="border-2 bg-card hover:border-primary transition-colors rounded-lg">
+    <Card className="border-2 bg-card transition-colors rounded-lg">
       <CardHeader>
         <div className="flex items-center justify-between">
           <CardTitle className="flex items-center gap-2">

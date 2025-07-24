@@ -45,7 +45,7 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect }: Masco
   }, [selectedBodyPart]);
 
   return (
-    <Card className="border-2 bg-card hover:border-primary transition-colors rounded-lg">
+    <Card className="border-2 bg-card transition-colors rounded-lg">
       <CardHeader>
         <div className="flex items-center justify-between">
           <CardTitle className="flex items-center gap-2">
@@ -80,7 +80,7 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect }: Masco
                   transition-all duration-300 border-2 focus:outline-none focus:ring-2 focus:ring-foreground
                   ${selectedBodyPart === 'character' 
                     ? 'border-foreground ring-2 ring-foreground' 
-                    : 'bg-transparent hover:bg-transparent border-transparent hover:border-foreground'
+                    : 'bg-transparent hover:bg-transparent border-transparent' // Removed hover:border-foreground
                   }
                 `}
                 title="Click để chỉnh sửa phần nhân vật"
@@ -103,7 +103,7 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect }: Masco
                   transition-all duration-300 border-2 focus:outline-none focus:ring-2 focus:ring-foreground
                   ${selectedBodyPart === 'face' 
                     ? 'border-foreground ring-2 ring-foreground' 
-                    : 'bg-transparent hover:bg-transparent border-transparent hover:border-foreground'
+                    : 'bg-transparent hover:bg-transparent border-transparent' // Removed hover:border-foreground
                   }
                 `}
                 title="Click để chỉnh sửa phần khuôn mặt"
@@ -126,7 +126,7 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect }: Masco
                   transition-all duration-300 border-2 focus:outline-none focus:ring-2 focus:ring-foreground
                   ${selectedBodyPart === 'costume' 
                     ? 'border-foreground ring-2 ring-foreground' 
-                    : 'bg-transparent hover:bg-transparent border-transparent hover:border-foreground'
+                    : 'bg-transparent hover:bg-transparent border-transparent' // Removed hover:border-foreground
                   }
                 `}
                 title="Click để chỉnh sửa phần trang phục"

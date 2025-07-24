@@ -40,7 +40,7 @@ export const PromptPreview = memo(({ options }: PromptPreviewProps) => {
   }, [generatedPrompt, toast]);
 
   return (
-    <Card className="border-2 bg-card hover:border-primary transition-colors rounded-lg">
+    <Card className="border-2 bg-card transition-colors rounded-lg">
       <Collapsible open={isOpen} onOpenChange={setIsOpen}>
         <CardHeader>
           <div className="flex items-center justify-between">
