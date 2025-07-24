@@ -61,13 +61,7 @@ export const PromptPreview = memo(({ options }: PromptPreviewProps) => {
               </Button>
             </div>
           </div>
-          <div className="flex items-center gap-4 text-sm text-muted-foreground">
-            <span>{charCount} ký tự</span>
-            <span>•</span>
-            <span>{wordCount} từ</span>
-            <span>•</span>
-            <span className="text-green-600 font-medium">Sẵn sàng sử dụng</span>
-          </div>
+          {/* Removed character count, word count, and 'Sẵn sàng sử dụng' status */}
         </CardHeader>
         <CardContent>
           <CollapsibleTrigger asChild>
