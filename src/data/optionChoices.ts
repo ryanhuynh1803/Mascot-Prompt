@@ -9,7 +9,7 @@ export const optionChoices = {
     "young, friendly, curious", "mature, wise, calm", "energetic, playful, gender-neutral",
     "bold, mischievous, male", "shy, thoughtful, female", "stoic, determined, robotic",
     "goofy, optimistic, animal-like", "sassy, confident, alien", "adventurous, brave, explorer",
-    "gentle, loyal, plant-based", "sarcastic, witty, object-like", "young, moody boy" // New choice
+    "gentle, loyal, plant-based", "sarcastic, witty, object-like", "young, moody boy", "cute, ceremonial" // New choice
   ],
   costume_type: [
     "simple jumpsuit", "futuristic armor", "casual streetwear", "elegant gown",
@@ -21,18 +21,19 @@ export const optionChoices = {
     "modern tech", "fantasy realm", "urban street art", "nature-inspired",
     "retro futuristic", "steampunk industrial", "cyberpunk neon", "minimalist abstract",
     "whimsical fairytale", "space exploration", "ancient mythology", "oceanic adventure",
-    "desert nomad", "arctic explorer", "jungle safari", "victorian gothic", "Storybook"
+    "desert nomad", "arctic explorer", "jungle safari", "victorian gothic", "Storybook", "traditional Chinese" // New choice
   ],
   body_shape: [
     "round and soft", "tall and slender", "short and stout", "athletic and muscular",
     "boxy and geometric", "fluid and amorphous", "triangular and sharp", "pear-shaped",
-    "inverted triangle", "hourglass", "bean-shaped", "star-shaped", "cloud-like", "petite" // New choice
+    "inverted triangle", "hourglass", "bean-shaped", "star-shaped", "cloud-like", "petite"
   ],
   proportion_details: [
     "oversized head, small body", "realistic human proportions", "elongated limbs, small torso",
     "chubby and compact", "top-heavy, large upper body", "bottom-heavy, large lower body",
     "insectoid limbs", "no visible limbs, floating", "serpentine tail instead of legs",
-    "multiple arms", "extra long neck", "tiny feet, large hands"
+    "multiple arms", "extra long neck", "tiny feet, large hands",
+    "very large round head, small short body, 1:3 head-to-body ratio, soft rounded limbs, no visible joints" // New choice
   ],
   pose_and_attitude: [
     "standing, waving cheerfully", "sitting cross-legged, meditating", "running energetically, looking back",
@@ -52,38 +53,41 @@ export const optionChoices = {
     "a small backpack", "oversized headphones", "a futuristic tablet", "a magical staff",
     "a tiny crown", "a pair of stylish glasses", "a utility belt", "a flowing cape",
     "a cute hat", "a robotic arm attachment", "a glowing orb", "a vintage camera",
-    "a flower garland", "a smart watch", "a pair of roller skates", "a small pet companion"
+    "a flower garland", "a smart watch", "a pair of roller skates", "a small pet companion",
+    "a red decorative collar with a geometric Chinese pattern and a small golden bell in the center" // New choice
   ],
   animal_or_theme_inspiration: [
     "a playful fox", "a wise owl", "a majestic lion", "a curious cat",
     "a speedy cheetah", "a gentle bear", "a mischievous monkey", "a graceful deer",
     "a soaring eagle", "a cunning snake", "a loyal dog", "a whimsical unicorn",
-    "a futuristic robot", "a mystical dragon", "a deep-sea creature", "a forest spirit"
+    "a futuristic robot", "a mystical dragon", "a deep-sea creature", "a forest spirit",
+    "a Chinese lion" // New choice
   ],
   hair_style: [
     "short and spiky", "long and flowing", "curly and voluminous", "sleek bob",
     "braided pigtails", "bald with a unique headpiece", "wild and messy", "afro",
     "dreadlocks", "mohawk", "made of leaves", "flowing like water", "glowing strands",
     "digital data stream", "feathered crest", "hooded with glowing lines",
-    "grayish-brown, peeking from under hood"
+    "grayish-brown, peeking from under hood", "swirly orange mane" // New choice
   ],
   face_features: [
     "large, expressive eyes and a wide smile", "small, dot eyes and a tiny smirk", "almond-shaped eyes and thin lips",
     "star-shaped pupils and an open mouth", "half-closed sleepy eyes and a gentle smile", "wide surprised eyes and an 'O' mouth",
     "cool sunglasses and a confident grin", "button eyes and a stitched mouth", "no eyes, just smooth face",
     "glowing LED eyes and a robotic mouth", "heterochromatic eyes and a playful tongue out", "X-shaped eyes and a goofy grin",
-    "pouty cheeks, blushing skin, large cartoon eyes, narrowed eyes, furrowed brows"
+    "pouty cheeks, blushing skin, large cartoon eyes, narrowed eyes, furrowed brows",
+    "spiral cheek markings, tiny fangs, curly eyebrows" // New choice
   ],
   emotion_or_attitude: [
     "joyful and approachable", "calm and serene", "energetic and excited", "thoughtful and contemplative",
     "playful and mischievous", "confident and determined", "surprised and amazed", "sarcastic and witty",
     "brave and heroic", "gentle and kind", "grumpy but lovable", "ecstatic and overjoyed",
-    "sad but hopeful", "curious and inquisitive", "stoic and observant"
+    "sad but hopeful", "curious and inquisitive", "stoic and observant", "playful" // New choice
   ],
   material_1: [
     "soft vinyl", "metal", "plastic", "silicone", "wood", "fabric", "glass", "rubber",
     "felt", "velvet", "holographic film", "glitter", "rough paper", "polished chrome",
-    "knitted wool", "rough stone", "glowing plasma", "origami paper", "clay", "ice", "plush" // New choice
+    "knitted wool", "rough stone", "glowing plasma", "origami paper", "clay", "ice", "plush"
   ],
   material_2: [
     "matte plastic", "brushed aluminum", "transparent acrylic", "soft leather", "polished wood",
@@ -98,7 +102,8 @@ export const optionChoices = {
   surface_feel: [
     "smooth and tactile", "rough and textured", "soft and plush", "hard and rigid",
     "bouncy and squishy", "slippery and glossy", "gritty and abrasive", "cool and metallic",
-    "warm and organic", "delicate and fragile", "sticky", "dry", "wet", "fuzzy", "sharp"
+    "warm and organic", "delicate and fragile", "sticky", "dry", "wet", "fuzzy", "sharp",
+    "smooth and glossy" // New choice
   ],
   lighting_style: [
     "soft studio lighting", "dramatic chiaroscuro", "bright and airy natural light",
@@ -112,7 +117,7 @@ export const optionChoices = {
     "digital circuit board", "vintage blueprint", "chalkboard drawing",
     "watercolor splash", "pixelated retro game scene", "futuristic data stream",
     "dreamy cloudscape", "underwater coral reef", "ancient ruins", "cyberpunk alley",
-    "clean soft pastel green background"
+    "clean soft pastel green background", "soft pastel background" // New choice
   ],
   application_context: [
     "educational mobile app", "tech website", "finance branding", "FMCG packaging",
@@ -120,7 +125,8 @@ export const optionChoices = {
     "non-profit awareness", "environmental initiative", "travel agency branding",
     "fashion line promotion", "real estate marketing", "music album cover",
     "book illustration", "automotive advertisement", "luxury brand identity",
-    "character merchandise, animated storybooks, collectible vinyl figures"
+    "character merchandise, animated storybooks, collectible vinyl figures",
+    "collectible toy figures, Lunar New Year mascots" // New choice
   ],
   leg_shape: [ // New
     "short and stubby", "long and slender", "athletic and strong", "digitigrade (animal-like)",

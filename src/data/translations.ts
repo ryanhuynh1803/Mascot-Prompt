@@ -41,7 +41,8 @@ export const translations = {
     "goofy, optimistic, animal-like": "ngốc nghếch, lạc quan, giống động vật", "sassy, confident, alien": "tự tin, ngổ ngáo, người ngoài hành tinh", 
     "adventurous, brave, explorer": "thích phiêu lưu, dũng cảm, nhà thám hiểm",
     "gentle, loyal, plant-based": "dịu dàng, trung thành, thực vật", "sarcastic, witty, object-like": "châm biếm, hóm hỉnh, giống đồ vật",
-    "young, moody boy": "cậu bé trẻ, ủ rũ" // New translation
+    "young, moody boy": "cậu bé trẻ, ủ rũ",
+    "cute, ceremonial": "dễ thương, nghi lễ" // New translation
   },
   costume_type: {
     "simple jumpsuit": "bộ áo liền quần đơn giản", "futuristic armor": "áo giáp tương lai", "casual streetwear": "trang phục đường phố", 
@@ -56,20 +57,22 @@ export const translations = {
     "cyberpunk neon": "neon cyberpunk", "minimalist abstract": "trừu tượng tối giản", "whimsical fairytale": "cổ tích kỳ ảo", 
     "space exploration": "khám phá không gian", "ancient mythology": "thần thoại cổ đại", "oceanic adventure": "phiêu lưu đại dương",
     "desert nomad": "du mục sa mạc", "arctic explorer": "nhà thám hiểm Bắc Cực", "jungle safari": "safari rừng rậm", "victorian gothic": "Gothic Victoria",
-    "Storybook": "Sách truyện"
+    "Storybook": "Sách truyện",
+    "traditional Chinese": "truyền thống Trung Quốc" // New translation
   },
   body_shape: {
     "round and soft": "tròn và mềm mại", "tall and slender": "cao và mảnh khảnh", "short and stout": "ngắn và mập mạp", 
     "athletic and muscular": "thể thao và cơ bắp", "boxy and geometric": "hình hộp và hình học", "fluid and amorphous": "lỏng và vô định hình", 
     "triangular and sharp": "tam giác và sắc nét", "pear-shaped": "hình quả lê", "inverted triangle": "tam giác ngược", 
     "hourglass": "đồng hồ cát", "bean-shaped": "hình hạt đậu", "star-shaped": "hình ngôi sao", "cloud-like": "giống đám mây",
-    "petite": "nhỏ nhắn" // New translation
+    "petite": "nhỏ nhắn"
   },
   proportion_details: {
     "oversized head, small body": "đầu to, thân nhỏ", "realistic human proportions": "tỷ lệ người thực tế", "elongated limbs, small torso": "tay chân dài, thân nhỏ",
     "chubby and compact": "mập mập và nhỏ gọn", "top-heavy, large upper body": "nặng trên, thân trên to", "bottom-heavy, large lower body": "nặng dưới, thân dưới to",
     "insectoid limbs": "chi côn trùng", "no visible limbs, floating": "không chi, lơ lửng", "serpentine tail instead of legs": "đuôi rắn thay chân",
-    "multiple arms": "nhiều tay", "extra long neck": "cổ cực dài", "tiny feet, large hands": "chân nhỏ, tay to"
+    "multiple arms": "nhiều tay", "extra long neck": "cổ cực dài", "tiny feet, large hands": "chân nhỏ, tay to",
+    "very large round head, small short body, 1:3 head-to-body ratio, soft rounded limbs, no visible joints": "đầu rất to tròn, thân nhỏ ngắn, tỷ lệ đầu-thân 1:3, chân tay tròn mềm, không khớp nối rõ ràng" // New translation
   },
   pose_and_attitude: {
     "standing, waving cheerfully": "đứng, vẫy tay vui vẻ", "sitting cross-legged, meditating": "ngồi khoanh chân, thiền định", 
@@ -95,14 +98,16 @@ export const translations = {
     "a magical staff": "một cây gậy phép thuật", "a tiny crown": "một chiếc vương miện nhỏ", "a pair of stylish glasses": "một cặp kính thời trang", 
     "a utility belt": "một chiếc thắt lưng tiện ích", "a flowing cape": "một chiếc áo choàng bay", "a cute hat": "một chiếc mũ dễ thương", 
     "a robotic arm attachment": "một phụ kiện cánh tay robot", "a glowing orb": "một quả cầu phát sáng", "a vintage camera": "một máy ảnh cổ điển",
-    "a flower garland": "một vòng hoa", "a smart watch": "một đồng hồ thông minh", "a pair of roller skates": "một đôi giày patin", "a small pet companion": "một người bạn thú cưng nhỏ"
+    "a flower garland": "một vòng hoa", "a smart watch": "một đồng hồ thông minh", "a pair of roller skates": "một đôi giày patin", "a small pet companion": "một người bạn thú cưng nhỏ",
+    "a red decorative collar with a geometric Chinese pattern and a small golden bell in the center": "một vòng cổ trang trí màu đỏ với họa tiết hình học Trung Quốc và một chiếc chuông vàng nhỏ ở giữa" // New translation
   },
   animal_or_theme_inspiration: {
     "a playful fox": "một con cáo tinh nghịch", "a wise owl": "một con cú khôn ngoan", "a majestic lion": "một con sư tử hùng vĩ", 
     "a curious cat": "một con mèo tò mò", "a speedy cheetah": "một con báo nhanh nhẹn", "a gentle bear": "một con gấu hiền lành", 
     "a mischievous monkey": "một con khỉ tinh nghịch", "a graceful deer": "một con hươu duyên dáng", "a soaring eagle": "một con đại bàng bay lượn", 
     "a cunning snake": "một con rắn xảo quyệt", "a loyal dog": "một con chó trung thành", "a whimsical unicorn": "một con kỳ lân kỳ ảo",
-    "a futuristic robot": "một robot tương lai", "a mystical dragon": "một con rồng thần bí", "a deep-sea creature": "một sinh vật biển sâu", "a forest spirit": "một linh hồn rừng"
+    "a futuristic robot": "một robot tương lai", "a mystical dragon": "một con rồng thần bí", "a deep-sea creature": "một sinh vật biển sâu", "a forest spirit": "một linh hồn rừng",
+    "a Chinese lion": "một con sư tử Trung Quốc" // New translation
   },
   hair_style: {
     "short and spiky": "ngắn và dựng", "long and flowing": "dài và bồng bềnh", "curly and voluminous": "xoăn và bồng bềnh", 
@@ -110,7 +115,8 @@ export const translations = {
     "wild and messy": "hoang dã và rối", "afro": "tóc Afro", "dreadlocks": "tóc Dreadlocks", "mohawk": "tóc Mohawk", 
     "made of leaves": "làm từ lá", "flowing like water": "bay bổng như nước", "glowing strands": "sợi tóc phát sáng",
     "digital data stream": "dòng dữ liệu số", "feathered crest": "mào lông vũ", "hooded with glowing lines": "đội mũ trùm với đường kẻ phát sáng",
-    "grayish-brown, peeking from under hood": "nâu xám, ló ra từ dưới mũ trùm"
+    "grayish-brown, peeking from under hood": "nâu xám, ló ra từ dưới mũ trùm",
+    "swirly orange mane": "bờm xoắn màu cam" // New translation
   },
   face_features: {
     "large, expressive eyes and a wide smile": "mắt to, biểu cảm và nụ cười rộng", "small, dot eyes and a tiny smirk": "mắt chấm nhỏ và nụ cười mỉm", 
@@ -120,20 +126,22 @@ export const translations = {
     "no eyes, just smooth face": "không mắt, chỉ mặt trơn", "glowing LED eyes and a robotic mouth": "mắt LED phát sáng và miệng robot", 
     "heterochromatic eyes and a playful tongue out": "mắt hai màu và lè lưỡi tinh nghịch", 
     "X-shaped eyes and a goofy grin": "mắt hình chữ X và nụ cười ngốc nghếch",
-    "pouty cheeks, blushing skin, large cartoon eyes, narrowed eyes, furrowed brows": "má phúng phính, da ửng hồng, mắt hoạt hình to, mắt híp, lông mày cau lại"
+    "pouty cheeks, blushing skin, large cartoon eyes, narrowed eyes, furrowed brows": "má phúng phính, da ửng hồng, mắt hoạt hình to, mắt híp, lông mày cau lại",
+    "spiral cheek markings, tiny fangs, curly eyebrows": "vết xoắn trên má, răng nanh nhỏ, lông mày xoăn" // New translation
   },
   emotion_or_attitude: {
     "joyful and approachable": "vui vẻ và dễ gần", "calm and serene": "điềm tĩnh và thanh thản", "energetic and excited": "năng động và hào hứng", 
     "thoughtful and contemplative": "chu đáo và trầm tư", "playful and mischievous": "vui tươi và tinh nghịch", "confident and determined": "tự tin và quyết đoán", 
     "surprised and amazed": "ngạc nhiên và kinh ngạc", "sarcastic and witty": "châm biếm và hóm hỉnh", "brave and heroic": "dũng cảm và anh hùng", 
     "gentle and kind": "dịu dàng và tốt bụng", "grumpy but lovable": "cáu kỉnh nhưng đáng yêu", "ecstatic and overjoyed": "ngây ngất và vui sướng tột độ",
-    "sad but hopeful": "buồn nhưng đầy hy vọng", "curious and inquisitive": "tò mò và ham học hỏi", "stoic and observant": "điềm tĩnh và quan sát"
+    "sad but hopeful": "buồn nhưng đầy hy vọng", "curious and inquisitive": "tò mò và ham học hỏi", "stoic and observant": "điềm tĩnh và quan sát",
+    "playful": "vui tươi" // New translation
   },
   material_1: {
     "soft vinyl": "vinyl mềm", "metal": "kim loại", "plastic": "nhựa", "silicone": "silicone", "wood": "gỗ", "fabric": "vải", "glass": "thủy tinh", "rubber": "cao su",
     "felt": "nỉ", "velvet": "nhung", "holographic film": "phim hologram", "glitter": "kim tuyến", "rough paper": "giấy nhám", "polished chrome": "chrome bóng",
     "knitted wool": "len đan", "rough stone": "đá thô", "glowing plasma": "plasma phát sáng", "origami paper": "giấy origami", "clay": "đất sét", "ice": "băng",
-    "plush": "vải nhung" // New translation
+    "plush": "vải nhung"
   },
   material_2: {
     "matte plastic": "nhựa mờ", "brushed aluminum": "nhôm xước", "transparent acrylic": "acrylic trong suốt", "soft leather": "da mềm", "polished wood": "gỗ bóng",
@@ -148,7 +156,8 @@ export const translations = {
   surface_feel: {
     "smooth and tactile": "mịn và xúc giác", "rough and textured": "thô và có vân", "soft and plush": "mềm mại và sang trọng", "hard and rigid": "cứng và chắc chắn",
     "bouncy and squishy": "nảy và mềm nhũn", "slippery and glossy": "trơn trượt và bóng loáng", "gritty and abrasive": "sần sùi và mài mòn", "cool and metallic": "mát và kim loại",
-    "warm and organic": "ấm áp và hữu cơ", "delicate and fragile": "tinh tế và dễ vỡ", "sticky": "dính", "dry": "khô", "wet": "ướt", "fuzzy": "lông tơ", "sharp": "sắc nét"
+    "warm and organic": "ấm áp và hữu cơ", "delicate and fragile": "tinh tế và dễ vỡ", "sticky": "dính", "dry": "khô", "wet": "ướt", "fuzzy": "lông tơ", "sharp": "sắc nét",
+    "smooth and glossy": "mịn và bóng" // New translation
   },
   lighting_style: {
     "soft studio lighting": "ánh sáng studio mềm mại", "dramatic chiaroscuro": "ánh sáng chiaroscuro kịch tính", "bright and airy natural light": "ánh sáng tự nhiên tươi sáng và thoáng đãng",
@@ -163,7 +172,8 @@ export const translations = {
     "watercolor splash": "vết màu nước", "pixelated retro game scene": "cảnh game retro pixel", "futuristic data stream": "dòng dữ liệu tương lai",
     "dreamy cloudscape": "cảnh mây mơ màng", "underwater coral reef": "rạn san hô dưới nước", "ancient ruins": "tàn tích cổ đại", 
     "cyberpunk alley": "hẻm cyberpunk",
-    "clean soft pastel green background": "nền xanh pastel mềm mại, sạch sẽ"
+    "clean soft pastel green background": "nền xanh pastel mềm mại, sạch sẽ",
+    "soft pastel background": "nền màu pastel mềm mại" // New translation
   },
   application_context: {
     "educational mobile app": "ứng dụng di động giáo dục", "tech website": "trang web công nghệ", "finance branding": "thương hiệu tài chính", 
@@ -172,15 +182,16 @@ export const translations = {
     "environmental initiative": "sáng kiến môi trường", "travel agency branding": "thương hiệu công ty du lịch", "fashion line promotion": "quảng bá dòng thời trang", 
     "real estate marketing": "tiếp thị bất động sản", "music album cover": "bìa album nhạc", "book illustration": "minh họa sách", 
     "automotive advertisement": "quảng cáo ô tô", "luxury brand identity": "nhận diện thương hiệu xa xỉ",
-    "character merchandise, animated storybooks, collectible vinyl figures": "hàng hóa nhân vật, sách truyện hoạt hình, tượng vinyl sưu tầm"
+    "character merchandise, animated storybooks, collectible vinyl figures": "hàng hóa nhân vật, sách truyện hoạt hình, tượng vinyl sưu tầm",
+    "collectible toy figures, Lunar New Year mascots": "mô hình đồ chơi sưu tầm, linh vật Tết Nguyên Đán" // New translation
   },
-  leg_shape: { // New
-    "short and stubby": "ngắn và mập", "long and slender": "dài và mảnh khảnh", "athletic and strong": "khỏe mạnh và thể thao", "digitigrade (animal-like)": "dạng ngón (giống động vật)",
-    "plantigrade (human-like)": "dạng bàn chân (giống người)", "mechanical limbs": "chân máy móc", "tentacle-like": "giống xúc tu", "no visible legs, floating": "không chân, lơ lửng"
-  },
-  footwear: { // New
-    "simple sneakers": "giày thể thao đơn giản", "futuristic boots": "giày bốt tương lai", "barefoot": "chân trần", "sandals": "dép", "high heels": "giày cao gót",
-    "robot feet": "bàn chân robot", "animal paws": "chân động vật", "rollerblades": "giày patin", "hover shoes": "giày bay", "traditional clogs": "guốc truyền thống",
-    "armored greaves": "giáp chân", "glowing energy boots": "giày năng lượng phát sáng"
-  }
+  leg_shape: [ // New
+    "short and stubby", "long and slender", "athletic and strong", "digitigrade (animal-like)",
+    "plantigrade (human-like)", "mechanical limbs", "tentacle-like", "no visible legs, floating"
+  ],
+  footwear: [ // New
+    "simple sneakers", "futuristic boots", "barefoot", "sandals", "high heels",
+    "robot feet", "animal paws", "rollerblades", "hover shoes", "traditional clogs",
+    "armored greaves", "glowing energy boots"
+  ]
 };
