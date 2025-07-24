@@ -58,9 +58,7 @@ export const SelectedOptions = ({ options }: SelectedOptionsProps) => {
             <Badge variant={completionPercentage > 50 ? "default" : "secondary"} className="text-xs rounded-md">
               {completionPercentage}% hoàn thành
             </Badge>
-            <Badge variant="outline" className="text-xs rounded-md">
-              {selectedCount}/{totalOptions}
-            </Badge>
+            {/* Removed the badge displaying selectedCount/totalOptions */}
           </div>
         </div>
         <div className="text-sm text-muted-foreground">
