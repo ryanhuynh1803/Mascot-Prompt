@@ -23,8 +23,10 @@ export interface PromptOptions {
   lighting_style: string;
   background_type: string;
   application_context: string;
-  leg_shape: string; // New
-  footwear: string; // New
+  leg_shape: string;
+  footwear: string;
+  viewpoint: string; // New
+  action: string; // New
 }
 
 export const defaultOptions: PromptOptions = {
@@ -48,16 +50,18 @@ export const defaultOptions: PromptOptions = {
   lighting_style: "soft studio lighting",
   background_type: "clean white background",
   application_context: "educational mobile app",
-  leg_shape: "short and stubby", // Default for new option
-  footwear: "simple sneakers", // Default for new option
+  leg_shape: "short and stubby",
+  footwear: "simple sneakers",
+  viewpoint: "front view", // Default for new option
+  action: "standing", // Default for new option
 };
 
 export const bodyPartOptions = {
   character: ['art_style', 'age_gender_personality', 'body_shape', 'proportion_details', 'pose_and_attitude', 'design_theme'],
   costume: ['costume_type', 'costume_description', 'accessory_detail', 'animal_or_theme_inspiration'],
-  legs: ['leg_shape', 'footwear'], // New
+  legs: ['leg_shape', 'footwear'],
   face: ['hair_style', 'face_features', 'emotion_or_attitude'],
   materials: ['material_1', 'material_2', 'material_3', 'surface_feel'],
   environment: ['lighting_style', 'background_type'],
-  context: ['application_context'],
+  context: ['application_context', 'viewpoint', 'action'], // Added new options here
 };

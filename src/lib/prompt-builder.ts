@@ -16,13 +16,15 @@ export const buildPrompt = (options: Partial<PromptOptions>): string => {
     sentences.push("Generate a 3D mascot.");
   }
 
-  // Sentence 2: Body and Pose
-  const bodyAndPoseDetails = [];
-  if (get('body_shape')) bodyAndPoseDetails.push(`a ${get('body_shape')} body shape`);
-  if (get('proportion_details')) bodyAndPoseDetails.push(`${get('proportion_details')} proportions`);
-  if (get('pose_and_attitude')) bodyAndPoseDetails.push(`a ${get('pose_and_attitude')} pose`);
-  if (bodyAndPoseDetails.length > 0) {
-    sentences.push(`Character features ${bodyAndPoseDetails.join(' and ')}.`);
+  // Sentence 2: Body, Pose, and Action
+  const bodyPoseActionDetails = [];
+  if (get('body_shape')) bodyPoseActionDetails.push(`a ${get('body_shape')} body shape`);
+  if (get('proportion_details')) bodyPoseActionDetails.push(`${get('proportion_details')} proportions`);
+  if (get('pose_and_attitude')) bodyPoseActionDetails.push(`a ${get('pose_and_attitude')} pose`);
+  if (get('action')) bodyPoseActionDetails.push(`and is ${get('action')}`); // Added action here
+
+  if (bodyPoseActionDetails.length > 0) {
+    sentences.push(`Character features ${bodyPoseActionDetails.join(' and ')}.`);
   }
 
   // Sentence 3: Costume
@@ -67,12 +69,15 @@ export const buildPrompt = (options: Partial<PromptOptions>): string => {
     sentences.push(`Character is ${materialSentenceParts.join(' and ')}.`);
   }
 
-  // Sentence 7: Environment
+  // Sentence 7: Environment and Viewpoint
   const environmentDetails = [];
   if (get('background_type')) environmentDetails.push(`${get('background_type')} background`);
   if (get('lighting_style')) environmentDetails.push(`illuminated by ${get('lighting_style')} lighting`);
   if (environmentDetails.length > 0) {
     sentences.push(`Character is set against a ${environmentDetails.join(' and ')}.`);
+  }
+  if (get('viewpoint')) { // New sentence for viewpoint
+    sentences.push(`Rendered from a ${get('viewpoint')}.`);
   }
 
   // Sentence 8: Context
