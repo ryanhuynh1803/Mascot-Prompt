@@ -6,8 +6,9 @@ import { SelectedOptions } from "./SelectedOptions";
 import { useMascotConfig } from "@/hooks/useMascotConfig";
 import { Badge } from "@/components/ui/badge";
 import { PromptOptions } from "@/types/mascot";
-import { PresetSelector } from "./PresetSelector"; // New import
-import { Preset } from "@/data/presets"; // Import Preset type
+import { PresetSelector } from "./PresetSelector";
+import { Preset } from "@/data/presets";
+import { ThemeToggle } from "./ThemeToggle"; // Import ThemeToggle
 
 export function PromptGenerator() {
   const [visitorCount, setVisitorCount] = useState("");
@@ -22,8 +23,8 @@ export function PromptGenerator() {
     handlePreviousPart,
     currentPage,
     totalPages,
-    applyPreset, // Use the new applyPreset function
-    mascotImageUrl, // Get mascotImageUrl
+    applyPreset,
+    mascotImageUrl,
   } = useMascotConfig();
 
   useEffect(() => {
@@ -32,8 +33,8 @@ export function PromptGenerator() {
     setVisitorCount(`${randomKCount}K`);
   }, []);
 
-  const handleApplyPreset = (preset: Preset) => { // Change type to Preset
-    applyPreset(preset.options, preset.imageUrl); // Pass both options and image URL
+  const handleApplyPreset = (preset: Preset) => {
+    applyPreset(preset.options, preset.imageUrl);
   };
 
   const today = new Date().toLocaleDateString('vi-VN');
@@ -41,20 +42,10 @@ export function PromptGenerator() {
   return (
     <div className="min-h-screen bg-background text-foreground p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
-        {/* Header Section - Removed as requested */}
-        {/* <header className="text-center mb-8 animate-fade-in">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground">
-              Trình Tạo Prompt Mascot
-            </h1>
-            <Badge variant="secondary" className="text-xs font-semibold rounded-md">
-              v6.0
-            </Badge>
-          </div>
-          <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
-            Tạo prompt chi tiết cho mascot của bạn với giao diện trực quan và dễ sử dụng
-          </p>
-        </header> */}
+        {/* Header Section */}
+        <header className="flex justify-end mb-4">
+          <ThemeToggle /> {/* Add ThemeToggle here */}
+        </header>
 
         {/* Main Content Grid */}
         <main className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
@@ -71,7 +62,6 @@ export function PromptGenerator() {
               currentPage={currentPage}
               totalPages={totalPages}
             />
-            {/* Add PresetSelector here */}
             <PresetSelector onApplyPreset={handleApplyPreset} />
           </section>
 
@@ -80,7 +70,7 @@ export function PromptGenerator() {
             <MascotPreview 
               selectedBodyPart={selectedBodyPart}
               onBodyPartSelect={handleBodyPartSelect}
-              mascotImageUrl={mascotImageUrl} // Pass the image URL
+              mascotImageUrl={mascotImageUrl}
             />
           </section>
 
