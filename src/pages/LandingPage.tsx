@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { LandingPagePresetCarousel } from '@/components/LandingPagePresetCarousel';
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -31,6 +32,10 @@ const LandingPage = () => {
         >
           Bắt đầu
         </Button>
+      </div>
+
+      <div className="mt-12 w-full max-w-5xl">
+        <LandingPagePresetCarousel />
       </div>
     </div>
   );
