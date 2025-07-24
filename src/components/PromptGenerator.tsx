@@ -38,8 +38,8 @@ export function PromptGenerator() {
   return (
     <div className="min-h-screen bg-background text-foreground p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
-        <header className="text-center mb-8 animate-fade-in">
+        {/* Header Section - Removed as requested */}
+        {/* <header className="text-center mb-8 animate-fade-in">
           <div className="flex items-center justify-center gap-3 mb-4">
             <h1 className="text-3xl md:text-4xl font-bold text-foreground">
               Trình Tạo Prompt Mascot
@@ -51,7 +51,7 @@ export function PromptGenerator() {
           <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
             Tạo prompt chi tiết cho mascot của bạn với giao diện trực quan và dễ sử dụng
           </p>
-        </header>
+        </header> */}
 
         {/* Main Content Grid */}
         <main className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
