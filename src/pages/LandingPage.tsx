@@ -32,16 +32,15 @@ const LandingPage = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-background text-foreground p-4 md:p-6 text-center animate-fade-in relative overflow-hidden">
       {/* Phần tử đóm sáng */}
-      {/* Đã thay đổi z-[9999] thành z-0 */}
-      {/* Đã thay đổi w-8 h-8 thành w-16 h-16 */}
+      {/* Đã tăng kích thước lên gấp 3 lần */}
       <div
-        className="fixed w-16 h-16 rounded-full pointer-events-none z-0 transition-transform duration-75 ease-out"
+        className="fixed w-48 h-48 rounded-full pointer-events-none z-0 transition-transform duration-75 ease-out"
         style={{
           left: mousePosition.x,
           top: mousePosition.y,
           transform: 'translate(-50%, -50%)',
-          background: 'radial-gradient(circle at center, rgba(255, 192, 203, 0.6) 0%, rgba(255, 192, 203, 0) 70%)',
-          boxShadow: '0 0 25px 10px rgba(255, 192, 203, 0.4)' // Đã tăng kích thước bóng đổ
+          background: 'radial-gradient(circle at center, rgba(255, 192, 203, 0.3) 0%, rgba(255, 192, 203, 0) 70%)', // Giảm độ đậm màu hồng
+          boxShadow: '0 0 50px 20px rgba(255, 192, 203, 0.2)' // Tăng kích thước bóng đổ và giảm độ đậm
         }}
       />
 
