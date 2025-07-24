@@ -58,12 +58,12 @@ export const SelectedOptions = ({ options }: SelectedOptionsProps) => {
             <Badge variant={completionPercentage > 50 ? "default" : "secondary"} className="text-xs rounded-md">
               {completionPercentage}% hoàn thành
             </Badge>
-            {/* Removed the badge displaying selectedCount/totalOptions */}
           </div>
         </div>
+        {/* Removed the sentence displaying selectedCount/totalOptions */}
         <div className="text-sm text-muted-foreground">
           {selectedCount > 0 
-            ? `Bạn đã chọn ${selectedCount} tùy chọn từ ${Object.keys(groupedOptions).length} phần`
+            ? `Bạn đã chọn ${selectedCount} tùy chọn`
             : "Chưa có lựa chọn nào được thực hiện"
           }
         </div>
@@ -81,7 +81,7 @@ export const SelectedOptions = ({ options }: SelectedOptionsProps) => {
           </div>
           <CollapsibleContent className="mt-4">
             {selectedCount > 0 ? (
-              <ScrollArea className="h-[200px] pr-2">
+              <ScrollArea className="max-h-[150px] pr-2"> {/* Adjusted height */}
                 <div className="space-y-4">
                   {Object.entries(groupedOptions).map(([bodyPart, partOptions]) => (
                     <div key={bodyPart} className="space-y-2">
