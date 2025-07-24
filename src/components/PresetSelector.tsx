@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { presets, Preset } from "@/data/presets";
 import { useToast } from "@/components/ui/use-toast";
-import { Button } from "@/components/ui/button"; // Ensure Button is imported
+// Button is no longer needed here as the whole div becomes clickable
 
 interface PresetSelectorProps {
   onApplyPreset: (preset: Preset) => void;
@@ -21,7 +21,7 @@ export const PresetSelector = ({ onApplyPreset }: PresetSelectorProps) => {
   };
 
   return (
-    <Card className="border-2 bg-card transition-colors rounded-lg">
+    <Card className="bg-card transition-colors rounded-lg"> {/* Removed border-2 */}
       <CardHeader className="hidden"> {/* Hidden CardHeader */}
         <CardTitle className="flex items-center gap-2">
           Mẫu có sẵn
@@ -31,12 +31,12 @@ export const PresetSelector = ({ onApplyPreset }: PresetSelectorProps) => {
         </p>
       </CardHeader>
       <CardContent>
-        <ScrollArea className="w-full whitespace-nowrap pb-4"> {/* Changed to horizontal scroll */}
-          <div className="flex gap-4"> {/* Changed to flex for horizontal layout */}
+        <ScrollArea className="w-full whitespace-nowrap pb-4">
+          <div className="flex gap-4">
             {presets.map((preset) => (
               <div 
                 key={preset.id} 
-                className="flex items-center gap-4 p-3 border rounded-md bg-muted/20 hover:bg-muted/50 transition-colors cursor-pointer shrink-0 w-[280px]" // Added shrink-0 and fixed width
+                className="flex items-center gap-4 p-3 rounded-md bg-muted/20 hover:bg-muted/50 transition-colors cursor-pointer shrink-0 w-[280px]" // Removed border
                 onClick={() => handleSelectPreset(preset)}
               >
                 {preset.imageUrl && (
@@ -50,18 +50,11 @@ export const PresetSelector = ({ onApplyPreset }: PresetSelectorProps) => {
                   <h3 className="font-semibold text-foreground">{preset.name}</h3>
                   <p className="text-xs text-muted-foreground line-clamp-2">{preset.description}</p>
                 </div>
-                <Button 
-                  variant="secondary" 
-                  size="sm" 
-                  onClick={(e) => { e.stopPropagation(); handleSelectPreset(preset); }}
-                  className="shrink-0 rounded-md"
-                >
-                  Áp dụng
-                </Button>
+                {/* Removed the Button component */}
               </div>
             ))}
           </div>
-          <ScrollBar orientation="horizontal" /> {/* Horizontal scrollbar */}
+          <ScrollBar orientation="horizontal" />
         </ScrollArea>
       </CardContent>
     </Card>
