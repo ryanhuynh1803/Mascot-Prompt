@@ -41,6 +41,7 @@ export const SelectedOptions = ({ options }: SelectedOptionsProps) => {
   const partLabels: Record<string, string> = {
     character: 'Nhân vật',
     costume: 'Trang phục',
+    legs: 'Chân',
     face: 'Khuôn mặt',
     materials: 'Chất liệu',
     environment: 'Môi trường',
@@ -60,7 +61,6 @@ export const SelectedOptions = ({ options }: SelectedOptionsProps) => {
             </Badge>
           </div>
         </div>
-        {/* Removed the sentence displaying selectedCount/totalOptions */}
         <div className="text-sm text-muted-foreground">
           {selectedCount > 0 
             ? `Bạn đã chọn ${selectedCount} tùy chọn`
@@ -81,7 +81,7 @@ export const SelectedOptions = ({ options }: SelectedOptionsProps) => {
           </div>
           <CollapsibleContent className="mt-4">
             {selectedCount > 0 ? (
-              <ScrollArea className="max-h-[150px] pr-2"> {/* Adjusted height */}
+              <ScrollArea className="max-h-[250px] pr-2"> {/* Adjusted height to be roughly half of MascotPreview */}
                 <div className="space-y-4">
                   {Object.entries(groupedOptions).map(([bodyPart, partOptions]) => (
                     <div key={bodyPart} className="space-y-2">
