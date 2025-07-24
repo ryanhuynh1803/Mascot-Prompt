@@ -32,8 +32,9 @@ const LandingPage = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-background text-foreground p-4 md:p-6 text-center animate-fade-in relative overflow-hidden">
       {/* Phần tử đóm sáng */}
+      {/* Đã thay đổi z-[9999] thành z-0 */}
       <div
-        className="fixed w-8 h-8 rounded-full pointer-events-none z-[9999] transition-transform duration-75 ease-out"
+        className="fixed w-8 h-8 rounded-full pointer-events-none z-0 transition-transform duration-75 ease-out"
         style={{
           left: mousePosition.x,
           top: mousePosition.y,
