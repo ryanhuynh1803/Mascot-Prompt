@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { presets, Preset } from "@/data/presets";
 import { useToast } from "@/components/ui/use-toast";
-// Button is no longer needed here as the whole div becomes clickable
+import { Button } from "@/components/ui/button"; // Ensure Button is imported
 
 interface PresetSelectorProps {
   onApplyPreset: (preset: Preset) => void;
@@ -34,24 +34,25 @@ export const PresetSelector = ({ onApplyPreset }: PresetSelectorProps) => {
         <ScrollArea className="w-full whitespace-nowrap pb-4">
           <div className="flex gap-4">
             {presets.map((preset) => (
-              <div 
+              <Button // Changed from div to Button
                 key={preset.id} 
-                className="flex items-center gap-4 p-3 rounded-md bg-muted/20 hover:bg-muted/50 transition-colors cursor-pointer shrink-0 w-[280px]" // Removed border
                 onClick={() => handleSelectPreset(preset)}
+                // Apply previous div classes to Button, and add button-specific styles
+                className="flex items-center gap-4 p-3 rounded-md bg-muted/20 hover:bg-muted/50 transition-colors cursor-pointer shrink-0 w-[280px] h-auto justify-start text-left" 
+                variant="ghost" // Use ghost variant as a base, then override with custom classes
               >
                 {preset.imageUrl && (
                   <img 
                     src={preset.imageUrl} 
                     alt={preset.name} 
-                    className="w-16 h-16 object-cover rounded-md border border-muted-foreground/20" 
+                    className="w-16 h-16 object-cover rounded-md" // Removed border
                   />
                 )}
-                <div className="flex-1">
-                  <h3 className="font-semibold text-foreground">{preset.name}</h3>
+                <div className="flex-1 overflow-hidden"> {/* Added overflow-hidden to ensure text stays within bounds */}
+                  <h3 className="font-semibold text-foreground truncate">{preset.name}</h3> {/* Added truncate */}
                   <p className="text-xs text-muted-foreground line-clamp-2">{preset.description}</p>
                 </div>
-                {/* Removed the Button component */}
-              </div>
+              </Button>
             ))}
           </div>
           <ScrollBar orientation="horizontal" />
