@@ -9,6 +9,7 @@ export const buildPrompt = (options: Partial<PromptOptions>): string => {
   if (get('art_style')) characterCoreParts.push(`${get('art_style')} style`);
   if (get('age_gender_personality')) characterCoreParts.push(`a ${get('age_gender_personality')} character`);
   if (get('design_theme')) characterCoreParts.push(`in a ${get('design_theme')} theme`);
+  if (get('species')) characterCoreParts.push(`a ${get('species')} species`); // Added species here
 
   if (characterCoreParts.length > 0) {
     sentences.push(`Generate a 3D mascot. Character is rendered in a ${characterCoreParts.join(', ')}.`);
@@ -21,7 +22,7 @@ export const buildPrompt = (options: Partial<PromptOptions>): string => {
   if (get('body_shape')) bodyPoseActionDetails.push(`a ${get('body_shape')} body shape`);
   if (get('proportion_details')) bodyPoseActionDetails.push(`${get('proportion_details')} proportions`);
   if (get('pose_and_attitude')) bodyPoseActionDetails.push(`a ${get('pose_and_attitude')} pose`);
-  if (get('action')) bodyPoseActionDetails.push(`and is ${get('action')}`); // Added action here
+  if (get('action')) bodyPoseActionDetails.push(`and is ${get('action')}`);
 
   if (bodyPoseActionDetails.length > 0) {
     sentences.push(`Character features ${bodyPoseActionDetails.join(' and ')}.`);
@@ -76,7 +77,7 @@ export const buildPrompt = (options: Partial<PromptOptions>): string => {
   if (environmentDetails.length > 0) {
     sentences.push(`Character is set against a ${environmentDetails.join(' and ')}.`);
   }
-  if (get('viewpoint')) { // New sentence for viewpoint
+  if (get('viewpoint')) {
     sentences.push(`Rendered from a ${get('viewpoint')}.`);
   }
 

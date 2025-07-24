@@ -137,11 +137,15 @@ export const optionChoices = {
     "robot feet", "animal paws", "rollerblades", "hover shoes", "traditional clogs",
     "armored greaves", "glowing energy boots"
   ],
-  viewpoint: [ // New
+  viewpoint: [
     "front view", "side view", "back view", "top-down view", "low angle view", "high angle view", "dynamic angle"
   ],
-  action: [ // New
+  action: [
     "running", "jumping", "sitting", "waving", "holding an object", "interacting with environment",
     "dancing", "sleeping", "flying", "eating", "reading", "playing", "standing"
+  ],
+  species: [ // New
+    "humanoid", "animal", "robot", "alien", "mythical creature", "plant-based", "object-based",
+    "insectoid", "aquatic creature", "bird", "reptile", "amphibian", "mammal", "fantasy creature"
   ]
 };

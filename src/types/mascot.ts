@@ -25,8 +25,9 @@ export interface PromptOptions {
   application_context: string;
   leg_shape: string;
   footwear: string;
-  viewpoint: string; // New
-  action: string; // New
+  viewpoint: string;
+  action: string;
+  species: string; // New
 }
 
 export const defaultOptions: PromptOptions = {
@@ -52,16 +53,17 @@ export const defaultOptions: PromptOptions = {
   application_context: "educational mobile app",
   leg_shape: "short and stubby",
   footwear: "simple sneakers",
-  viewpoint: "front view", // Default for new option
-  action: "standing", // Default for new option
+  viewpoint: "front view",
+  action: "standing",
+  species: "humanoid", // Default for new option
 };
 
 export const bodyPartOptions = {
-  character: ['art_style', 'age_gender_personality', 'body_shape', 'proportion_details', 'pose_and_attitude', 'design_theme'],
+  character: ['art_style', 'age_gender_personality', 'body_shape', 'proportion_details', 'pose_and_attitude', 'design_theme', 'species'], // Added 'species' here
   costume: ['costume_type', 'costume_description', 'accessory_detail', 'animal_or_theme_inspiration'],
   legs: ['leg_shape', 'footwear'],
   face: ['hair_style', 'face_features', 'emotion_or_attitude'],
   materials: ['material_1', 'material_2', 'material_3', 'surface_feel'],
   environment: ['lighting_style', 'background_type'],
-  context: ['application_context', 'viewpoint', 'action'], // Added new options here
+  context: ['application_context', 'viewpoint', 'action'],
 };

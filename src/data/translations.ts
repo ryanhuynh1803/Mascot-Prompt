@@ -21,8 +21,9 @@ export const optionKeyTranslations: Record<string, string> = {
   application_context: "Ngữ cảnh ứng dụng",
   leg_shape: "Hình dạng chân",
   footwear: "Giày dép",
-  viewpoint: "Góc nhìn", // New
-  action: "Hành động", // New
+  viewpoint: "Góc nhìn",
+  action: "Hành động",
+  species: "Chủng loài", // New
 };
 
 export const translations = {
@@ -88,7 +89,7 @@ export const translations = {
   },
   costume_description: {
     "minimalist, with a small logo": "tối giản, có logo nhỏ", "intricate patterns and glowing lines": "hoa văn phức tạp và đường nét phát sáng", 
-    "worn and patched, with utility pockets": "cũ kỹ và vá víu, có túi tiện ích", "flowing fabric, adorned with jewels": "vải bay bổng, đính đá quý", 
+    "worn and patched, with utility pockets": "cũ kỹ và vá váo, có túi tiện ích", "flowing fabric, adorned with jewels": "vải bay bổng, đính đá quý", 
     "sleek and form-fitting, with metallic accents": "kiểu dáng đẹp và ôm sát, có điểm nhấn kim loại", "colorful and whimsical, with oversized buttons": "đầy màu sắc và kỳ quái, có nút quá khổ",
     "rugged and practical, with many straps": "gồ ghề và thực tế, có nhiều dây đai", "elegant and flowing, with subtle embroidery": "thanh lịch và bay bổng, có thêu tinh tế", 
     "futuristic and segmented": "tương lai và phân đoạn", "organic and leafy": "hữu cơ và nhiều lá", "sparkling and ethereal": "lấp lánh và thanh tao", 
@@ -187,37 +188,36 @@ export const translations = {
     "character merchandise, animated storybooks, collectible vinyl figures": "hàng hóa nhân vật, sách truyện hoạt hình, tượng vinyl sưu tầm",
     "collectible toy figures, Lunar New Year mascots": "mô hình đồ chơi sưu tầm, linh vật Tết Nguyên Đán"
   },
-  leg_shape: {
-    "short and stubby": "ngắn và mập mạp", "long and slender": "dài và mảnh khảnh", "athletic and strong": "thể thao và mạnh mẽ", "digitigrade (animal-like)": "dạng ngón (giống động vật)",
-    "plantigrade (human-like)": "dạng bàn chân (giống người)", "mechanical limbs": "chi cơ khí", "tentacle-like": "giống xúc tu", "no visible legs, floating": "không chân, lơ lửng"
-  },
-  footwear: {
-    "simple sneakers": "giày thể thao đơn giản", "futuristic boots": "giày bốt tương lai", "barefoot": "chân trần", "sandals": "dép", "high heels": "giày cao gót",
-    "robot feet": "bàn chân robot", "animal paws": "chân động vật", "rollerblades": "giày patin", "hover shoes": "giày bay", "traditional clogs": "guốc truyền thống",
-    "armored greaves": "giáp chân", "glowing energy boots": "giày năng lượng phát sáng"
-  },
-  viewpoint: { // New
-    "front view": "nhìn từ phía trước",
-    "side view": "nhìn từ bên cạnh",
-    "back view": "nhìn từ phía sau",
-    "top-down view": "nhìn từ trên xuống",
-    "low angle view": "góc nhìn thấp",
-    "high angle view": "góc nhìn cao",
-    "dynamic angle": "góc nhìn động"
-  },
-  action: { // New
-    "running": "đang chạy",
-    "jumping": "đang nhảy",
-    "sitting": "đang ngồi",
-    "waving": "đang vẫy tay",
-    "holding an object": "đang cầm một vật",
-    "interacting with environment": "đang tương tác với môi trường",
-    "dancing": "đang nhảy múa",
-    "sleeping": "đang ngủ",
-    "flying": "đang bay",
-    "eating": "đang ăn",
-    "reading": "đang đọc",
-    "playing": "đang chơi",
-    "standing": "đang đứng"
+  leg_shape: [
+    "short and stubby", "long and slender", "athletic and strong", "digitigrade (animal-like)",
+    "plantigrade (human-like)", "mechanical limbs", "tentacle-like", "no visible legs, floating"
+  ],
+  footwear: [
+    "simple sneakers", "futuristic boots", "barefoot", "sandals", "high heels",
+    "robot feet", "animal paws", "rollerblades", "hover shoes", "traditional clogs",
+    "armored greaves", "glowing energy boots"
+  ],
+  viewpoint: [
+    "front view", "side view", "back view", "top-down view", "low angle view", "high angle view", "dynamic angle"
+  ],
+  action: [
+    "running", "jumping", "sitting", "waving", "holding an object", "interacting with environment",
+    "dancing", "sleeping", "flying", "eating", "reading", "playing", "standing"
+  ],
+  species: { // New
+    "humanoid": "người",
+    "animal": "động vật",
+    "robot": "robot",
+    "alien": "người ngoài hành tinh",
+    "mythical creature": "sinh vật thần thoại",
+    "plant-based": "thực vật",
+    "object-based": "dựa trên vật thể",
+    "insectoid": "côn trùng",
+    "aquatic creature": "sinh vật dưới nước",
+    "bird": "chim",
+    "reptile": "bò sát",
+    "amphibian": "lưỡng cư",
+    "mammal": "động vật có vú",
+    "fantasy creature": "sinh vật giả tưởng"
   }
 };
