@@ -75,8 +75,8 @@ export const LandingPagePresetCarousel = () => {
         >
           <div 
             className="flex gap-4 py-2"
-            onMouseEnter={stopAutoScroll} // Dừng cuộn khi rê chuột vào
-            onMouseLeave={startAutoScroll} // Tiếp tục cuộn khi rê chuột ra
+            // Đã xóa onMouseEnter={stopAutoScroll}
+            // Đã xóa onMouseLeave={startAutoScroll}
           >
             {loopedPresets.map((preset, index) => (
               <div 
