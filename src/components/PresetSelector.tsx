@@ -7,14 +7,14 @@ import { PromptOptions } from "@/types/mascot";
 import { useToast } from "@/components/ui/use-toast";
 
 interface PresetSelectorProps {
-  onApplyPreset: (preset: Partial<PromptOptions>) => void;
+  onApplyPreset: (preset: Preset) => void; // Changed to accept full Preset object
 }
 
 export const PresetSelector = ({ onApplyPreset }: PresetSelectorProps) => {
   const { toast } = useToast();
 
   const handleSelectPreset = (preset: Preset) => {
-    onApplyPreset(preset.options);
+    onApplyPreset(preset); // Pass the full Preset object
     toast({
       title: "Đã áp dụng mẫu!",
       description: `Mẫu "${preset.name}" đã được áp dụng thành công.`,

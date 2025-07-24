@@ -7,6 +7,7 @@ import { useMascotConfig } from "@/hooks/useMascotConfig";
 import { Badge } from "@/components/ui/badge";
 import { PromptOptions } from "@/types/mascot";
 import { PresetSelector } from "./PresetSelector"; // New import
+import { Preset } from "@/data/presets"; // Import Preset type
 
 export function PromptGenerator() {
   const [visitorCount, setVisitorCount] = useState("");
@@ -21,7 +22,8 @@ export function PromptGenerator() {
     handlePreviousPart,
     currentPage,
     totalPages,
-    setOptions,
+    applyPreset, // Use the new applyPreset function
+    mascotImageUrl, // Get mascotImageUrl
   } = useMascotConfig();
 
   useEffect(() => {
@@ -30,8 +32,8 @@ export function PromptGenerator() {
     setVisitorCount(`${randomKCount}K`);
   }, []);
 
-  const handleApplyPreset = (preset: Partial<PromptOptions>) => {
-    setOptions(prev => ({ ...prev, ...preset }));
+  const handleApplyPreset = (preset: Preset) => { // Change type to Preset
+    applyPreset(preset.options, preset.imageUrl); // Pass both options and image URL
   };
 
   const today = new Date().toLocaleDateString('vi-VN');
@@ -78,6 +80,7 @@ export function PromptGenerator() {
             <MascotPreview 
               selectedBodyPart={selectedBodyPart}
               onBodyPartSelect={handleBodyPartSelect}
+              mascotImageUrl={mascotImageUrl} // Pass the image URL
             />
           </section>
 

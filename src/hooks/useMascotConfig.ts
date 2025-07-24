@@ -2,12 +2,14 @@ import { useState, useCallback } from 'react';
 import { BodyPart, PromptOptions, defaultOptions, bodyPartsOrder, bodyPartOptions } from '@/types/mascot';
 import { optionChoices } from '@/data/optionChoices';
 import { useToast } from '@/hooks/use-toast';
+import { presets } from '@/data/presets'; // Import presets
 
 export const useMascotConfig = () => {
   const { toast } = useToast();
 
-  // Luôn bắt đầu với trạng thái mặc định, bỏ qua localStorage
   const [options, setOptions] = useState<Partial<PromptOptions>>(defaultOptions);
+  // Initialize with the first preset's image, or a default placeholder if no presets
+  const [mascotImageUrl, setMascotImageUrl] = useState<string>(presets[0]?.imageUrl || "https://i.pinimg.com/1200x/ce/31/a8/ce31a87217b46a9981ffa7c2d4dd9c50.jpg");
 
   const [selectedBodyPart, setSelectedBodyPart] = useState<BodyPart>('character');
 
@@ -20,6 +22,7 @@ export const useMascotConfig = () => {
 
   const handleReset = useCallback(() => {
     setOptions(defaultOptions);
+    setMascotImageUrl(presets[0]?.imageUrl || "https://i.pinimg.com/1200x/ce/31/a8/ce31a87217b46a9981ffa7c2d4dd9c50.jpg"); // Reset image to default preset image
     setSelectedBodyPart('character');
     toast({
       title: "Đã làm mới!",
@@ -29,7 +32,6 @@ export const useMascotConfig = () => {
 
   const handleRandom = useCallback(() => {
     const randomOptions: Partial<PromptOptions> = {};
-
     for (const key in optionChoices) {
       const typedKey = key as keyof typeof optionChoices;
       const choices = optionChoices[typedKey];
@@ -38,8 +40,8 @@ export const useMascotConfig = () => {
         randomOptions[typedKey as keyof PromptOptions] = choices[randomIndex];
       }
     }
-
     setOptions(randomOptions);
+    // Do not change image on random, only on preset apply
     toast({
       title: "Lựa chọn ngẫu nhiên đã được áp dụng!",
       description: "Hãy khám phá kết quả bất ngờ.",
@@ -62,6 +64,13 @@ export const useMascotConfig = () => {
     setSelectedBodyPart(bodyPartsOrder[prevIndex]);
   }, [selectedBodyPart]);
 
+  const applyPreset = useCallback((presetOptions: Partial<PromptOptions>, imageUrl?: string) => {
+    setOptions(presetOptions); // Overwrite with preset options
+    if (imageUrl) {
+      setMascotImageUrl(imageUrl);
+    }
+  }, []);
+
   const currentPage = bodyPartsOrder.indexOf(selectedBodyPart) + 1;
   const totalPages = bodyPartsOrder.length;
 
@@ -76,6 +85,7 @@ export const useMascotConfig = () => {
     handlePreviousPart,
     currentPage,
     totalPages,
-    setOptions,
+    applyPreset, // New function to apply preset
+    mascotImageUrl, // New state for image URL
   };
 };

@@ -8,6 +8,7 @@ import { BodyPart } from "@/types/mascot";
 interface MascotPreviewProps {
   selectedBodyPart: BodyPart;
   onBodyPartSelect: (part: BodyPart) => void;
+  mascotImageUrl: string; // New prop for image URL
 }
 
 const bodyParts: { part: BodyPart; label: string }[] = [
@@ -19,7 +20,7 @@ const bodyParts: { part: BodyPart; label: string }[] = [
   { part: 'context', label: 'Bối cảnh' }
 ];
 
-export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect }: MascotPreviewProps) => {
+export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect, mascotImageUrl }: MascotPreviewProps) => { // Destructure new prop
   const scrollAreaRef = useRef<HTMLDivElement>(null);
   const tabsListRef = useRef<HTMLDivElement>(null);
 
@@ -64,7 +65,7 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect }: Masco
         <div className="relative group w-full max-w-[300px]">
           <div className="relative">
             <img 
-              src="https://i.pinimg.com/1200x/ce/31/a8/ce31a87217b46a9981ffa7c2d4dd9c50.jpg" 
+              src={mascotImageUrl} // Use the dynamic image URL
               alt="Mascot Preview"
               className="w-full h-auto transition-transform duration-300 group-hover:scale-105 rounded-lg border-2 border-muted"
               loading="lazy"
