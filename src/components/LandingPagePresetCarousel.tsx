@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ScrollArea } from "@/components/ui/scroll-area"; // Removed ScrollBar import
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { presets } from "@/data/presets";
 
 export const LandingPagePresetCarousel = () => {
@@ -105,10 +105,29 @@ export const LandingPagePresetCarousel = () => {
   const onMouseMove = useCallback((e: React.MouseEvent) => {
     if (!isDragging.current || !scrollViewportRef.current) return;
     e.preventDefault(); // Prevent text selection while dragging
+
     const x = e.clientX;
-    const walk = (x - startX.current) * 1.5; // Adjust scroll speed for better feel
-    scrollViewportRef.current.scrollLeft = scrollLeft.current - walk;
-  }, []);
+    const deltaX = x - startX.current; // How much mouse moved horizontally
+
+    // Only allow scrolling forward (content moves left) when dragging mouse to the right (deltaX > 0)
+    if (deltaX < 0) {
+      return; // If dragging left, do nothing
+    }
+
+    const dragAmount = deltaX * 1.5; // Adjust scroll speed for better feel
+
+    // Calculate new scroll position: scrollLeft increases when dragging mouse right
+    let newScrollLeft = scrollLeft.current + dragAmount;
+
+    // Apply the new scroll position
+    scrollViewportRef.current.scrollLeft = newScrollLeft;
+
+    // Handle looping for manual drag (only for forward scrolling)
+    const originalContentTotalWidth = presets.length * (250 + 16); 
+    if (scrollViewportRef.current.scrollLeft >= originalContentTotalWidth) {
+      scrollViewportRef.current.scrollLeft -= originalContentTotalWidth;
+    }
+  }, [presets.length]);
 
   return (
     <div className="w-full">
