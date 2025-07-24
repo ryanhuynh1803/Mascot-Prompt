@@ -75,8 +75,6 @@ export const LandingPagePresetCarousel = () => {
         >
           <div 
             className="flex gap-4 py-2"
-            // Đã xóa onMouseEnter={stopAutoScroll}
-            // Đã xóa onMouseLeave={startAutoScroll}
           >
             {loopedPresets.map((preset, index) => (
               <div 
@@ -88,6 +86,7 @@ export const LandingPagePresetCarousel = () => {
                   src={preset.imageUrl || "/public/placeholder.svg"}
                   alt={preset.name} 
                   className="w-full h-[350px] object-cover rounded-lg"
+                  // Đã bỏ loading="lazy"
                 />
               </div>
             ))}
