@@ -187,7 +187,7 @@ export const MascotPreview = memo(({ selectedBodyPart, onBodyPartSelect, mascotI
                 </TabsTrigger>
               ))}
             </TabsList>
-            <ScrollBar orientation="horizontal" />
+            {/* Removed ScrollBar component */}
           </ScrollArea>
         </Tabs>
 
