@@ -35,7 +35,10 @@ export const presets: Preset[] = [
       background_type: "clean soft pastel green background",
       application_context: "character merchandise, animated storybooks, collectible vinyl figures",
       leg_shape: "short and stubby", 
-      footwear: "simple sneakers", 
+      footwear: "simple sneakers",
+      viewpoint: "front view", // Added
+      action: "standing", // Added
+      species: "humanoid", // Added
     },
     imageUrl: "/images/cau-be-khung-long.png", // Updated image URL
   },
@@ -63,6 +66,9 @@ export const presets: Preset[] = [
       application_context: "collectible toy figures, Lunar New Year mascots",
       leg_shape: "short and stubby",
       footwear: "barefoot",
+      viewpoint: "front view", // Added
+      action: "standing", // Added
+      species: "animal", // Added
     },
     imageUrl: "/images/chinese-lion-mascot.png",
   },
