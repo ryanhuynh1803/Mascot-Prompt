@@ -49,8 +49,8 @@ const OptionsPanelComponent = ({
   const totalCount = optionsToShow.length;
 
   return (
-    <Card className="flex flex-col h-[500px] border-2 bg-card transition-colors rounded-lg"> {/* Increased overall card height to 500px */}
-      <CardHeader className="pb-4">
+    <Card className="flex flex-col h-[500px] border-2 bg-card transition-colors rounded-lg">
+      <CardHeader className="pb-4 px-6"> {/* Added px-6 for consistent padding */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div>
@@ -92,8 +92,8 @@ const OptionsPanelComponent = ({
         </div>
       </CardHeader>
 
-      <CardContent className="flex-grow">
-        <ScrollArea className="h-[300px] pr-4"> {/* Increased scroll area height to 300px */}
+      <CardContent className="flex-grow px-6"> {/* Added px-6 for consistent padding */}
+        <ScrollArea className="h-[300px] pr-4">
           <div className="space-y-4">
             {optionsToShow.map((key, index) => (
               <div key={key} className="animate-fade-in" style={{ animationDelay: `${index * 50}ms` }}>
@@ -108,7 +108,7 @@ const OptionsPanelComponent = ({
         </ScrollArea>
       </CardContent>
 
-      <CardFooter className="pt-4 border-t">
+      <CardFooter className="pt-4 px-6 border-t"> {/* Added px-6 for consistent padding */}
         <div className="flex w-full items-center justify-between">
           <div className="text-sm text-muted-foreground">
             <span className="font-medium">{partLabels[selectedBodyPart]}</span>
